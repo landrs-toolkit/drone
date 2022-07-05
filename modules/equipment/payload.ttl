@@ -32,7 +32,20 @@
 <https://w3id.org/drone/ont/module/payload> rdf:type oplax:Module
 .
 
-
+drone:carries a owl:ObjectProperty;
+    rdfs:label "carries"
+    rdfs:domain drone:Vehicle;
+    rdfs:range drone:Cargo;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Property:P3349>;
+    rdfs:subPropertyOf drone:hasPart ;
+.
+drone:isCarriedBy a owl:ObjectProperty;
+    rdfs:label "is carried by"
+    rdfs:domain drone:Vehicle;
+    rdfs:range drone:Cargo;
+    rdfs:subPropertyOf drone:isPartOf ;
+    owl:inverseOf drone:carries;
+.
 drone:Cargo a owl:Class;
     rdfs:label "Cargo"@en ;
     rdfs:comment "Goods transported by a vehicle"@en;
@@ -44,7 +57,6 @@ drone:Payload a owl:Class;
     rdfs:comment "Mission load on a vehicle"@en ;
     skos:closeMatch <https://www.wikidata.org/wiki/Q21211206>;
 .
-
 drone:InstrumentPayload a owl:Class;
     rdfs:subClassOf drone:Payload;
     rdfs:subClassOf ssn:System ;
