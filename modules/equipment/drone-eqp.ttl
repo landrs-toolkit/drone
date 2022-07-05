@@ -1,0 +1,146 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix s3n: <http://w3id.org/s3n/> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/droneeqp> rdf:type oplax:Module  ;
+             rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_equipment_ontology> ;
+.
+
+drone:GroundControlStation a rdfs:Class ;
+  rdfs:label "Ground Control Station"@en ;
+  rdfs:comment "A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones)."@en ;
+  skos:exactMatch wd:Q4118990 ;
+  rdfs:subClassOf drone:Product ;
+  rdfs:seeAlso <https://en.wikipedia.org/wiki/Ground_control_station> ;
+  drone:component drone:UAS ;
+  drone:isPartOf [
+    rdf:type drone:Component ;
+    drone:hasWhole drone:UAS
+  ] .
+
+drone:CommunicationSystem a rdfs:Class ;
+  rdfs:label "Communication System"@en ;
+  rdfs:comment "Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight."@en ;
+  rdfs:subClassOf drone:Product ;
+  rdfs:subClassOf ssn:System ;
+  skos:exactMatch wd:Q31479975 ;
+  sdo:sameAs s3n:CommunicatingSystem ;
+  drone:component drone:UAS ;
+  drone:isPartOf [
+    rdf:type drone:Component, drone:UAVComponent ;
+    drone:hasWhole drone:UAS
+  ] .
+
+drone:Component a rdfs:Class ;
+  rdfs:subClassOf drone:Equipment
+  rdfs:label "Component"@en ;
+  rdfs:comment "Subclass of equipment to enumerate composition of a UxV"@en ;
+  skos:exactMatch wd:Q811909 ;
+ .
+drone:UAVComponent a rdfs:Class ;
+  rdfs:label "Unmanned Aircraft Component"@en;
+  rdfs:comment "Component of a Unmanned Aerial Vehicle"@en;
+  rdfs:subClassOf drone:Component ;
+  skos:exactMatch wd:Q28816538 .
+
+drone:Body a rdfs:Class, drone:UAVComponent ;
+  rdfs:label "UxV Body"@en ;
+  rdfs:comment "Body of the UxV, for a UAV this would be an airframe"@en ;
+  rdfs:subClassOf drone:Product ;
+  drone:component drone:UxV ;
+  drone:isPartOf [
+    rdf:type drone:Component, drone:UAVComponent;
+    drone:hasWhole drone:UxV
+  ] .
+
+drone:Airframe a rdfs:Class ;
+  rdfs:label "Airframe"@en ;
+  rdfs:comment "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system."@en ;
+  rdfs:subClassOf drone:Body ;
+  skos:exactMatch wd:Q222946 
+.
+
+drone:Autopilot a rdfs:Class ;
+  rdfs:subClassOf sdo:SoftwareApplicaion ;
+  sdo:sameAs s3n:Algorithm ;
+  rdfs:label "Autopilot"@en ;
+  rdfs:comment "Software to control and navigate an aircraft"@en ;
+  skos:altLabel "Flight Controller"@en ;
+  skos:altLabel "Flight Controller Board"@en ;
+  drone:component drone:FlightControlSystem ;
+  drone:isPartOf [
+    rdf:type drone:Component ;
+    drone:hasWhole drone:FlightControlSystem
+  ] .
+
+drone:Payload a rdfs:Class ;
+  rdfs:label "Payload"@en ;
+  rdfs:comment "Unmanned vehicle payload"@en ;
+  rdfs:subClassOf wd:Q319224 ;
+  drone:component drone:UAS ;
+  drone:isPartOf [
+    rdf:type drone:Component ;
+    drone:hasWhole drone:UAS
+  ] .
+
+drone:SmartSensor a rdfs:Class, owl:Class ;
+  rdfs:label "Smart Sensor"@en;
+  rdfs:comment "Smart-Sensor - A SmartSensor is composed of one or more Sensors together with a MicroController that implements different Algorithms, and makes Algorithm Executions on the result of the Observations these Sensors make to output a resulting value for some Indicator. This value may then be communicated by some CommunicatingSystemCommunicatingSystem."@en;
+  sdo:sameAs s3n:SmartSensor ;
+  rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf sosa:Platform .
+
+drone:CompanionComputer a rdfs:Class ;
+  rdfs:label "Companion Computer"@en ;
+  rdfs:comment "A companion computer is a device that travels on-board the vehicle and controls/communicates with the autopilot over a low-latency link. Apps running on a companion computer can perform computationally intensive or time-sensitive tasks, and add much greater intelligence than is provided by the autopilot alone." ;
+  rdfs:subClassOf drone:Payload ;
+  rdfs:subClassOf ssn:System ;
+  rdfs:subClassOf drone:Product ;
+  skos:exactMatch wd:Q944780 ;
+  rdfs:seeAlso s3n:MicroController ;
+ .
+drone:FlightControllerBoard a rdfs:Class ;
+  rdfs:label "Flight Controller Board"@en ;
+  rdfs:comment "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly."@en ;
+  rdfs:seeAlso <https://dronekit-python.readthedocs.io/en/latest/develop/companion-computers.html> ;
+  rdfs:subClassOf drone:Product ;
+  rdfs:subClassOf sosa:System ;
+  sdo:sameAs s3n:MicroController ;
+  drone:component drone:FlightControlSystem ;
+  drone:isPartOf [
+    rdf:type drone:Component ;
+    drone:hasWhole drone:FlightControlSystem
+  ] .
+
+drone:FlightControlSystem a rdfs:Class ;
+  rdfs:label "Flight Control System"@en ;
+  rdfs:comment "Aircraft system utilized to control flight surfaces"@en ;
+  skos:exactMatch wd:Q11481471 .

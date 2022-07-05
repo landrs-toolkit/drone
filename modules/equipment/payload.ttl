@@ -33,14 +33,14 @@
 .
 
 drone:carries a owl:ObjectProperty;
-    rdfs:label "carries"
+    rdfs:label "carries"@en;
     rdfs:domain drone:Vehicle;
     rdfs:range drone:Cargo;
     rdfs:seeAlso <https://www.wikidata.org/wiki/Property:P3349>;
     rdfs:subPropertyOf drone:hasPart ;
 .
 drone:isCarriedBy a owl:ObjectProperty;
-    rdfs:label "is carried by"
+    rdfs:label "is carried by"@en ;
     rdfs:domain drone:Vehicle;
     rdfs:range drone:Cargo;
     rdfs:subPropertyOf drone:isPartOf ;
