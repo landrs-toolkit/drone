@@ -33,9 +33,8 @@
 
 <https://w3id.org/drone/ont/> rdf:type owl:Ontology ;
                                dcterms:title "LANDRS Ontology for Drone Operations"@en ;
-                               owl:versionIRI <https://w3id.org/drone/ont/0.0.1> ;
+                               owl:versionIRI <https://w3id.org/drone/ont/0.1.0> ;
                                owl:versionInfo "0.1.0"@en ;
-                               owl:priorVersion <https://w3id.org/drone/ont/0.0.1>;
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;

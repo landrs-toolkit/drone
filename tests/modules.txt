@@ -1,3 +1,4 @@
 metadata,./modules/core/metadata.ttl
-identifiers,./modules/core/identifiers.ttl
+identifier,./modules/core/identifier.ttl
 mereology,./modules/core/mereology.ttl
+activity, ./modules/core/activity.ttl

@@ -9,7 +9,7 @@ shapefiles=$(cat tests/shapes.txt | awk -F, '{print $2}')
 ONTOLOGY=drone
 SHACL=drone.shacl
 
-VERSION=` grep -i versionInfo modules/common/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
+VERSION=` grep -i versionInfo modules/core/metadata.ttl | sed 's/[^"]*"\([^"]*\).*/\1/'`
 
 if [ -f "./development/${ONTOLOGY}.ttl" ]; then
     rm ./development/${ONTOLOGY}.ttl
