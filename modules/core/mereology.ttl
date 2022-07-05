@@ -166,6 +166,7 @@ drone:surrounds rdf:type owl:ObjectProperty ;
 ###  http://semanticscience.org/resource/Entity
 drone:Entity rdf:type owl:Class ;
            skos:exactMatch sio:SIO_000000 ;
+           owl:equivalentClass prov:Entity;
            dcterms:description "Every thing is an entity."@en ;
            rdfs:isDefinedBy <https://w3id.org/drone/ont/> ;
            rdfs:label "Entity"@en .

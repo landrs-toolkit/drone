@@ -1,0 +1,54 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/payload> rdf:type oplax:Module
+.
+
+
+drone:Cargo a owl:Class;
+    rdfs:label "Cargo"@en ;
+    rdfs:comment "Goods transported by a vehicle"@en;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q319224> ;
+.
+drone:Payload a owl:Class;
+    rdfs:subClassOf drone:Cargo ;
+    rdfs:label "Payload"@en;
+    rdfs:comment "Mission load on a vehicle"@en ;
+    skos:closeMatch <https://www.wikidata.org/wiki/Q21211206>;
+.
+
+drone:InstrumentPayload a owl:Class;
+    rdfs:subClassOf drone:Payload;
+    rdfs:subClassOf ssn:System ;
+    rdfs:label "Instrument Payload"@en;
+    rdfs:comment "Payload that is a instrument platform such as cameras, atmospheric sensors, etc"@en ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q3099911>;
+.
