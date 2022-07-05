@@ -1,0 +1,253 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/equipment> rdf:type oplax:Module  ;
+             rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_equipment_ontology> ;
+.
+
+
+<http://purl.org/goodrelations/v1#BusinessEntity>
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Business entity" ;
+  rdfs:subClassOf org:FormalOrganization ;
+.
+
+
+
+drone:Equipment
+  a owl:Class ;
+  rdfs:label "Equipment" ;
+  rdfs:comment "Collective term for all items that are required to exercise a certain activity"@en ;
+  prov:wasQuotedFrom "https://www.wikidata.org/wiki/Q10273457";
+  skos:exactMatch <https://www.wikidata.org/wiki/Q10273457>;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:equipmentModel ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:equipmentType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:modelNumber ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:registrationDate ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:registrationNumber ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:hasIdentifier ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:identifier ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:manufacturedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:operatedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:ownedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:registeredBy ;
+    ] ;
+.
+drone:EquipmentModel
+  a owl:Class ;
+  rdfs:label "Equipment model" ;
+  rdfs:comment "";
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:equipmentType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:modelNumber ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:hasIdentifier ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:identifier ;
+    ] ;
+.
+drone:EquipmentOperator
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Equipment operator" ;
+  skos:definition "The Agent who is operating drone equipment"@en ;
+  rdfs:subClassOf prov:Agent ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:onProperty drone:operatorOf ;
+      owl:someValuesFrom drone:Equipment ;
+    ] ;
+.
+drone:EquipmentOwner
+  a owl:Class ;
+  rdfs:label "Equipment owner" ;
+  skos:definition "The Person/Organization that is the owner of the drone equipment"@en ;
+  rdfs:subClassOf prov:Agent ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:onProperty drone:ownerOf ;
+      owl:someValuesFrom drone:Equipment ;
+    ] ;
+.
+drone:EquipmentType
+  a owl:Class ;
+  rdfs:subClassOf drone:Type;
+  rdfs:label "Equipment type" ;
+  rdfs:subClassOf owl:Thing ;
+.
+
+drone:Manufacturer
+  a owl:Class ;
+  rdfs:label "Manufacturer" ;
+  rdfs:subClassOf prov:Agent ;
+.
+
+drone:equipmentModel
+  a owl:ObjectProperty ;
+  rdfs:domain drone:Equipment ;
+  rdfs:label "equipment model" ;
+  rdfs:range drone:EquipmentModel ;
+.
+drone:equipmentType
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf drone:hasType;
+  rdfs:label "equipment type" ;
+  rdfs:range drone:EquipmentType ;
+  owl:propertyChainAxiom (
+      drone:equipmentModel
+      drone:equipmentType
+    ) ;
+.
+drone:manufacturedBy
+  a owl:ObjectProperty ;
+  rdfs:label "manufactured by" ;
+  rdfs:range drone:Manufacturer ;
+.
+drone:manufactures
+  a owl:ObjectProperty ;
+  rdfs:label "manufactures" ;
+  rdfs:range drone:Equipment ;
+  owl:inverseOf drone:manufacturedBy ;
+.
+drone:modelNumber
+  a owl:DatatypeProperty ;
+  a owl:InverseFunctionalProperty ;
+  rdfs:label "model number" ;
+  rdfs:subPropertyOf drone:identifier ;
+  owl:propertyChainAxiom (
+      drone:equipmentModel
+      drone:modelNumber
+    ) ;
+.
+drone:operatedBy
+  a owl:ObjectProperty ;
+  rdfs:label "operator" ;
+  rdfs:range prov:Agent ;
+.
+drone:operatorOf
+  a owl:ObjectProperty ;
+  rdfs:label "operator Of" ;
+  rdfs:range drone:Equipment ;
+  owl:inverseOf drone:operatedBy ;
+.
+drone:ownedBy
+  a owl:ObjectProperty ;
+  rdfs:label "owner" ;
+  rdfs:range prov:Agent ;
+  owl:inverseOf drone:ownerOf ;
+.
+drone:ownerOf
+  a owl:ObjectProperty ;
+  rdfs:domain prov:Agent ;
+  rdfs:label "owner of" ;
+.
+drone:registeredBy
+  a owl:ObjectProperty ;
+  rdfs:label "registered by" ;
+  rdfs:range prov:Agent ;
+.
+drone:registrationDate
+  a owl:DatatypeProperty ;
+  rdfs:label "registration date" ;
+  rdfs:range xsd:date ;
+.
+drone:registrationNumber
+  a owl:DatatypeProperty ;
+  a owl:InverseFunctionalProperty ;
+  rdfs:label "registration number" ;
+  rdfs:subPropertyOf drone:identifier ;
+.
+drone:serialNumber
+  a owl:DatatypeProperty ;
+  a owl:InverseFunctionalProperty ;
+  rdfs:label "serial number" ;
+  rdfs:subPropertyOf drone:identifier ;
+.
+org:Organization
+  owl:equivalentClass org:Organization ;
+.
+prov:Agent
+  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+.

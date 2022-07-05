@@ -1,0 +1,35 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/explicittyping#hasType
+drone:hasType rdf:type owl:ObjectProperty ;
+         oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/explicittyping"^^rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#Thing
+owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasType ;
+                            owl:allValuesFrom :Type
+                          ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/explicittyping#Type
+drone:Type rdf:type owl:Class ;
+      oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/explicittyping"^^rdfs:Literal .
