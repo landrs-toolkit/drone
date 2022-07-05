@@ -1,0 +1,147 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/mission> rdf:type oplax:Module  ;
+             rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_flight_ontology> ;
+.
+
+drone:Mission
+    a owl:Class;
+    rdfs:subClassOf drone:Activity;
+    rdfs:label "Mission";
+    rdfs:comment "a specific task with which a vehicle is charged";
+    skos:closeMatch wd:Q13425175
+.
+
+drone:Flight
+  a owl:Class ;
+  rdfs:label "Flight" ;
+  rdfs:subClassOf drone:Mission ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom drone:AircraftOperator ;
+      owl:onProperty drone:operatedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:arrival ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:departure ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:flightCategory ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:flightNumber ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:actualRoute ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:plannedRoute ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:aircraft ;
+    ] ;
+.
+drone:Arrival
+  a owl:Class ;
+  rdfs:label "Arrival" ;
+  rdfs:subClassOf drone:Event ;
+  rdfs:subClassOf <http://www.w3.org/2006/time#Instant> ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#End> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:airport ;
+    ] ;
+.
+drone:Departure
+  a owl:Class ;
+  rdfs:label "Departure" ;
+  rdfs:subClassOf drone:Event ;
+  rdfs:subClassOf <http://www.w3.org/2006/time#Instant> ;
+  rdfs:subClassOf <http://www.w3.org/ns/prov#Start> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:airport ;
+    ] ;
+.
+
+drone:FlightCategory
+  a owl:Class ;
+  rdfs:label "Flight category" ;
+  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+.
+drone:aircraft
+  a owl:ObjectProperty ;
+  rdfs:label "aircraft" ;
+  rdfs:range drone:Aircraft ;
+  rdfs:subPropertyOf <http://www.w3.org/ns/prov#entity> ;
+.
+drone:airport
+  a owl:ObjectProperty ;
+  rdfs:label "airport" ;
+  rdfs:range drone:Airport ;
+  rdfs:subPropertyOf <http://www.w3.org/ns/prov#atLocation> ;
+.
+drone:arrival
+  a owl:ObjectProperty ;
+  rdfs:label "arrival" ;
+  rdfs:subPropertyOf drone:hasEndEvent ;
+.
+drone:departure
+  a owl:ObjectProperty ;
+  rdfs:label "departure" ;
+  rdfs:subPropertyOf drone:hasStartEvent ;
+.
+drone:flightCategory
+  a owl:ObjectProperty ;
+  rdfs:label "flight category" ;
+  rdfs:range drone:FlightCategory ;
+.
+drone:flightNumber
+  a owl:DatatypeProperty ;
+  rdfs:label "flight number" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf drone:identifierAsText ;
+.

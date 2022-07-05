@@ -38,7 +38,7 @@ drone:hasIdentifierType rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#identifierAsText
-:identifierAsText rdf:type owl:DatatypeProperty ;
+drone:identifierAsText rdf:type owl:DatatypeProperty ;
                   rdfs:label "identifierAsText";
                   oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 

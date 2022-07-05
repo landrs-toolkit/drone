@@ -1,0 +1,136 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/droneeqp> rdf:type oplax:Module  ;
+             rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_route_ontology> ;
+             oplax:reusesAsTemplate <https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory>;
+             rdfs:comment "Uses Trajectory Ontology Design Pattern"@en;
+.
+
+drone:Route
+  a owl:Class ;
+  rdfs:label "Route" ;
+  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+  rdfs:subClassOf time:TemporalAggregate;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:firstSegment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:lastSegment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:routeId ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:segment ;
+    ] ;
+.
+drone:RouteSegment
+  a owl:Class ;
+  rdfs:label "Route segment" ;
+  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:nextSegment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:previousSegment ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:segmentOf ;
+    ] ;
+.
+drone:actualRoute
+  a owl:ObjectProperty ;
+  rdfs:label "actual route" ;
+  rdfs:subPropertyOf drone:hasRoute ;
+.
+drone:filedRoute
+  a owl:ObjectProperty ;
+  rdfs:label "filed route" ;
+  rdfs:subPropertyOf drone:hasRoute ;
+.
+drone:firstSegment
+  a owl:ObjectProperty ;
+  rdfs:label "first segment" ;
+  rdfs:range drone:RouteSegment ;
+  rdfs:subPropertyOf drone:segment ;
+.
+drone:hasRoute
+  a owl:ObjectProperty ;
+  rdfs:label "has route" ;
+  rdfs:range drone:Route ;
+.
+drone:lastSegment
+  a owl:ObjectProperty ;
+  rdfs:label "last segment" ;
+  rdfs:range drone:RouteSegment ;
+  rdfs:subPropertyOf drone:segment ;
+.
+drone:nextSegment
+  a owl:ObjectProperty ;
+  rdfs:label "next segment" ;
+.
+drone:plannedRoute
+  a owl:ObjectProperty ;
+  rdfs:label "planned route" ;
+  rdfs:range drone:Route ;
+  rdfs:subPropertyOf drone:hasRoute ;
+.
+drone:previousSegment
+  a owl:ObjectProperty ;
+  rdfs:label "previous segment" ;
+.
+drone:routeId
+  a owl:DatatypeProperty ;
+  rdfs:label "route id" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf drone:identifierAsText ;
+.
+drone:segment
+  a owl:ObjectProperty ;
+  rdfs:label "segment" ;
+  rdfs:range drone:RouteSegment ;
+.
+drone:segmentOf
+  a owl:ObjectProperty ;
+  rdfs:label "segment of" ;
+  rdfs:range drone:Route ;
+  owl:inverseOf drone:segment ;
+.
