@@ -1,0 +1,85 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+# TODO: Add omv ontology metadata that describes formalism using omv ontology
+# TODO: Add funder information
+# TODO  Add ontology profile
+
+
+<https://w3id.org/drone/ont/> rdf:type owl:Ontology ;
+                               dcterms:title "LANDRS Ontology for Drone Operations"@en ;
+                               owl:versionIRI <https://w3id.org/drone/ont/0.0.1> ;
+                               owl:versionInfo "0.1.0"@en ;
+                               owl:priorVersion <https://w3id.org/drone/ont/0.0.1>;
+                               dcterms:publisher [
+                                   a sdo:Organization ;
+		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
+		                           sdo:url "https://crc.nd.edu"^^xsd:anyURI ;
+                                   owl:sameAs wd:Q178848 ;
+                               ];
+                               dcterms:creator [
+                                   a sdo:Person ;
+                                   sdo:name "Charles F. Vardeman II" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+                                   sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ;
+                               ];
+                               dcterms:contributor [
+                                   a sdo:Person ;
+                                   sdo:name "Christopher Sweet" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ;
+
+                               ];
+                               dcterms:contributor [
+                                   a sdo:Person ;
+                                   sdo:name "Priscila Saboia Moreira" ;
+                                   sdo:affiliation "University of Notre Dame" ;
+                               ];
+                               dcterms:created "2022-05-14"^^xsd:date ;
+                               dcterms:modified "2022-07-05"^^xsd:date ;
+                               dcterms:description """The DRONE Ontology is intended to be a light weight Ontology for drone operations constructed from Ontology Design Patterns connecting and aligning OGC and W3C standard Ontologies.
+This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability. The Merology was extracted from the Semantic Science Integrated Ontology to provide a lightweight set of parthood relations. 
+Contributions and Discussion Welcomed.
+Github: https://github.com/landrs-tookkit/drone"""@en ;
+                               dcterms:license <https://spdx.org/licenses/CC0-1.0> ;
+
+                               dcterms:rights "This vocabulary is distributed under Creative Commons Attribution Zero 1.0 Universal License - https://creativecommons.org/share-your-work/public-domain/cc0"@en ;
+                               dcterms:abstract "The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach ";
+                               dcterms:status "Draft";
+                               vann:preferredNamespacePrefix "drone" ;
+                               vann:preferredNamespaceUri "http://w3id.org/drone/ont/" ;
+
+                               sdo:license "https://spdx.org/licenses/CC0-1.0"@en ;
+                               prov:wasInfluencedBy <https://docs.ogc.org/per/20-020.html#Ontologies-Component> ;
+                               prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/ATM#>;
+                               prov:wasInfluencedBy <https://semantics.aero/pages/swim-vocabulary#>;
+                               prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/equipment#> ;
+                               rdfs:seeAlso <https://www.landrs.org> ;
+                               skos:note "Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.";
+.

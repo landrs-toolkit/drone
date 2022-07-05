@@ -1,0 +1,5 @@
+metadata,./modules/core/metadata.ttl
+activity,./modules/core/activity.ttl
+agent,./modules/core/agent.ttl
+identifiers,./modules/core/identifiers.ttl
+mereology,./modules/core/mereology.ttl
