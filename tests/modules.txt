@@ -5,3 +5,4 @@ activity, ./modules/core/activity.ttl
 equipment, ./modules/equipment/equipment.ttl
 payload, ./modules/equipment/payload.ttl
 droneeqp, ./modules/equipment/drone-eqp.ttl
+vehicle, ./modules/equipment/vehicle.ttl

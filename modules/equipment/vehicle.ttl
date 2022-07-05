@@ -1,0 +1,371 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix sosa-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+
+
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
+
+<https://w3id.org/drone/ont/module/vehicle> rdf:type oplax:Module ;
+  rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_aircraft_ontology> ;
+  skos:note "This is a generalization of the OGC Aviation ontology to support other vehicle classes than Aircraft. "
+.
+drone:Vehicle a rdfs:Class ;
+  rdfs:label "Vehicle"@en ;
+  rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en ;
+  rdfs:subClassOf drone:Equipment ;
+  sdo:sameAs sdo:Vehicle ;
+  skos:exactMatch wd:Q42889 ;
+.
+
+drone:Aircraft
+  a owl:Class ;
+  rdfs:label "Aircraft"@en ;
+  rdfs:comment "Machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface"@en ;
+  prov:wasQuotedFrom "https://www.wikidata.org/wiki/Q11436";
+  rdfs:subClassOf drone:Vehicle ;
+  skos:exactMatch wd:Q11436 ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom drone:AircraftManufacturer ;
+      owl:onProperty drone:manufacturedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom drone:AircraftOperator ;
+      owl:onProperty drone:operatedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom drone:AircraftOwner ;
+      owl:onProperty drone:ownedBy ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty drone:callSign ;
+    ] ;
+.
+drone:AircraftManufacturer
+  a owl:Class ;
+  rdfs:label "Aircraft manufacturer" ;
+  skos:exactMatch wd:Q107009743;
+  rdfs:subClassOf drone:Manufacturer ;
+.
+drone:AircraftModel
+  a owl:Class ;
+  rdfs:label "Aircraft model" ;
+  rdfs:subClassOf drone:EquipmentModel ;
+.
+drone:AircraftOperator
+  a owl:Class ;
+  rdfs:label "Aircraft operator" ;
+  rdfs:subClassOf drone:EquipmentOperator ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:onProperty drone:operatorOf ;
+      owl:someValuesFrom drone:Equipment ;
+    ] ;
+.
+drone:AircraftOwner
+  a owl:Class ;
+  rdfs:label "Aircraft owner" ;
+  rdfs:subClassOf drone:EquipmentOwner ;
+  owl:equivalentClass [
+      a owl:Restriction ;
+      owl:onProperty drone:ownerOf ;
+      owl:someValuesFrom drone:Aircraft ;
+    ] ;
+.
+drone:AircraftType
+  a owl:Class ;
+  rdfs:label "Aircraft type" ;
+  rdfs:subClassOf drone:EquipmentType ;
+.
+drone:aircraft
+  a owl:ObjectProperty ;
+  rdfs:label "aircraft" ;
+  rdfs:range drone:Aircraft ;
+.
+drone:callSign
+  a owl:DatatypeProperty ;
+  rdfs:label "call sign" ;
+  rdfs:subPropertyOf drone:identifierAsText;
+.
+###  http://schema.drone.org/schema/UAV
+drone:UAV a rdfs:Class, owl:Class ;
+  rdfs:label "Unmanned Aerial Vehicle"@en ;
+  rdfs:comment "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." ;
+  skos:prefLabel "Unmanned Aerial Vehicle"@en ;
+  skos:altLabel "UAV"@en ;
+  skos:exactMatch wd:Q484000 ;
+  rdfs:subClassOf drone:UxV ,
+                  drone:Aircraft ,
+                  drone:AerialRobot ,
+                  drone:MotorizedVehicle ,
+                  sosa:FeatureOfInterest ,
+                  sosa:Platform ;
+  drone:component drone:UAS .
+
+
+drone:UnderwaterVehicle rdf:type rdfs:Class ;
+  rdfs:label "Underwater Vehicle"@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+    ] .
+
+drone:SurfaceVehicle a rdfs:Class ;
+  rdfs:label "Surface Vehicle"@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:MotorizedVehicle a rdfs:Class ;
+  rdfs:label "Motorized Vehicle"@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:UnmotorizedVehicle a rdfs:Class ;
+  rdfs:label "Unmotorized Vehicle"@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:Robot a rdfs:Class ;
+  rdfs:label "Robot"@en;
+  rdfs:comment "Mechanical or virtual artificial agent carrying out physical activities"@en ;
+  rdfs:subClassOf drone:Product ;
+  skos:exactMatch wd:Q11012 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:AutonomousRobot a rdfs:Class ;
+  rdfs:label "Autonomous Robot"@en ;
+  rdfs:comment "An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence)."@en ;
+  rdfs:subClassOf drone:Robot ;
+  rdfs:subClassOf wd:Q2916098 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:RemotelyPilotedRobot a rdfs:Class ;
+  rdfs:label "Remotely Piloted Robot"@en ;
+  rdfs:subClassOf drone:Robot ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:AutomatedRobot a rdfs:Class ;
+  rdfs:label "Automated Robot"@en ;
+  rdfs:subClassOf drone:Robot ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:RoboticVehicle a rdfs:Class ;
+  rdfs:label "Robotic Vehicle"@en;
+  rdfs:comment "Robotic vehicles are machines that move autonomously on the ground, in the air, undersea, or in space. Such vehicles are “unmanned,” in the sense that no humans are on board. In general, these vehicles move by themselves, under their own power, with sensors and computational resources onboard to guide their motion."@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  rdfs:subClassOf drone:Robot ;
+  rdfs:subClassOf wd:Q4810574 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:UnderwaterRobot a rdfs:Class ;
+  rdfs:label "Underwater Robot"@en ;
+  rdfs:comment "Underwater Robots are vehicles that move autonomously underwater."@en ;
+  rdfs:subClassOf drone:RoboticVehice ;
+  rdfs:subClassOf drone:UnderwaterVehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:SurfaceRobot a rdfs:Class ;
+  rdfs:label "Underwater Robot"@en ;
+  rdfs:comment "Surface Robots are vehicles that move autonomously on the water surface."@en ;
+  rdfs:subClassOf drone:RoboticVehicle ;
+  rdfs:subClassOf drone:SurfaceVehicle ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:AerialRobot a rdfs:Class ;
+  rdfs:label "Aerial Robot"@en ;
+  rdfs:comment "Aerial Robots are vehicles that move autonomously in the air."@en ;
+  rdfs:subClassOf drone:RoboticVehice ;
+  rdfs:subClassOf drone:Aircraft .
+
+drone:AUV a rdfs:Class ;
+  rdfs:label "Autonomous Underwater Vehicle"@en ;
+  skos:altLabel "AUV"@en ;
+  rdfs:comment "An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator."@en ;
+  rdfs:subClassOf drone:UnderwaterRobot ;
+  rdfs:subClassOf drone:AutonomousRobot ;
+  skos:exactMatch wd:Q257406 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:ROV a rdfs:Class ;
+  rdfs:label "Remotely Operated Underwater Vehicle"@en ;
+  skos:altLabel "ROV"@en ;
+  rdfs:subClassOf drone:UnderwaterRobot ;
+  rdfs:subClassOf drone:MotorizedVehicle ;
+  skos:exactMatch wd:Q618465 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:UnderwaterGlider a rdfs:Class ;
+  rdfs:label "Underwater Glider"@en ;
+  rdfs:comment "An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float, but unlike a float, which can only move up and down, an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth, the glider switches to positive buoyancy to climb back up, and the cycle is then repeated."@en ;
+  rdfs:subClassOf drone:AUV ;
+  rdfs:subClassOf drone:UnmotorizedVehicle ;
+  skos:exactMatch wd:Q2634473 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:ASV a rdfs:Class ;
+  rdfs:label "Autonomous Surface Vehicle"@en ;
+  skos:altLabel "ASV";
+  rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+  rdfs:subClassOf drone:AutonomousRobot ;
+  rdfs:subClassOf drone:SurfaceRobot ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+# This may be a problem since wikidata treats ASV and USV as equivalent
+drone:USV a rdfs:Class ;
+  rdfs:label "Unmanned Surface Vehicle"@en ;
+  skos:altLabel "USV"@en ;
+  rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+  rdfs:subClassOf drone:SurfaceRobot ;
+  rdfs:subClassOf drone:MotorizedVehicle ;
+  skos:exactMatch wd:Q4419860 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:Vessel a rdfs:Class ;
+  rdfs:label "Vessel"@en ;
+  rdfs:comment "Vehicle that is a watercraft, boat, or ship. Note: Wikidata definition of vessel includes spaceship this drone:Vessel is a subClassOf wikidata vessel."@en ;
+  rdfs:subClassOf drone:SurfaceVehicle ;
+  rdfs:subClassOf drone:MotorizedVehicle ;
+  skos:exactMatch wd:Q16391167 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:Buoy a rdfs:Class ;
+  rdfs:label "Buoy"@en ;
+  rdfs:comment "A floating device that can be anchored (stationary) or allowed to drift with ocean currents."@en ;
+  rdfs:subClassOf drone:UnmotorizedVehicle ;
+  skos:exactMatch wd:Q30026 ;
+  prov:wasDerivedFrom [
+    a prov:Entity ;
+    dcterms:source <https://www.mdpi.com/185614> ;
+    sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ;
+    dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en
+  ] .
+
+drone:UxV a rdfs:Class ;
+  rdfs:label "Unmanned Vehicle"@en ;
+  rdfs:comment "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own."@en ;
+  skos:prefLabel "Unmanned Vehicle"@en ;
+  skos:altLabel "UxV"@en ;
+  rdfs:subClassOf drone:Vehicle ;
+  rdfs:subClassOf sosa:Platform ;
+  rdfs:subClassOf drone:Agent ;
+  skos:exactMatch wd:Q1527901 .
+
+drone:UAS a rdfs:Class ;
+  rdfs:label "Unmanned Aircraft System"@en ;
+  rdfs:comment "An Unmanned Aerial Vehicle, ground-based controller and communication system."@en ;
+  skos:prefLabel "Unmanned Aircraft System"@en ;
+  skos:altLabel "UAS"@en ;
+  rdfs:subClassOf drone:Product .

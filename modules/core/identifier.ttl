@@ -7,6 +7,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix oplax: <https://w3id.org/OPLaX/> .
 
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+@base <https://w3id.org/drone/ont/> .
+
 <https://w3id.org/drone/ont/module/identifier> rdf:type oplax:Module  ;
               oplax:wasExtractedFrom <https://archive.org/services/purl/domain/modular_ontology_design_library/identifier> ;
               oplax:hasRelatedPattern "https://archive.org/services/purl/domain/modular_ontology_design_library/reification"^^rdfs:Literal 
@@ -18,13 +22,13 @@
 #################################################################
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#hasIdentifier
-:hasIdentifier rdf:type owl:ObjectProperty ;
+drone:hasIdentifier rdf:type owl:ObjectProperty ;
               rdfs:label "hasIdentifier";
               oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#hasIdentifierType
-:hasIdentifierType rdf:type owl:ObjectProperty ;
+drone:hasIdentifierType rdf:type owl:ObjectProperty ;
                   rdfs:label "hasIdentifierType";
                   oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
@@ -45,26 +49,26 @@
 
 ###  http://www.w3.org/2002/07/owl#Thing
 owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasIdentifier ;
-                            owl:allValuesFrom :Identifier
+                            owl:onProperty drone:hasIdentifier ;
+                            owl:allValuesFrom drone:Identifier
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasIdentifierType ;
-                            owl:allValuesFrom :IDType
+                            owl:onProperty drone:hasIdentifierType ;
+                            owl:allValuesFrom drone:IDType
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :identifierAsText ;
+                            owl:onProperty drone:identifierAsText ;
                             owl:allValuesFrom xsd:string
                           ] .
 
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#IDType
-:IDType rdf:type owl:Class ;
+drone:IDType rdf:type owl:Class ;
         oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#Identifier
-:Identifier rdf:type owl:Class ;
+drone:Identifier rdf:type owl:Class ;
             oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
 
@@ -73,9 +77,9 @@ owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
 #################################################################
 
 [ rdf:type owl:Restriction ;
-  owl:onProperty :hasIdentifierType ;
+  owl:onProperty drone:hasIdentifierType ;
   owl:someValuesFrom owl:Thing ;
-  rdfs:subClassOf :Identifier
+  rdfs:subClassOf drone:Identifier
 ] .
 
 

@@ -60,7 +60,7 @@ drone:CommunicationSystem a rdfs:Class ;
   ] .
 
 drone:Component a rdfs:Class ;
-  rdfs:subClassOf drone:Equipment
+  rdfs:subClassOf drone:Equipment ;
   rdfs:label "Component"@en ;
   rdfs:comment "Subclass of equipment to enumerate composition of a UxV"@en ;
   skos:exactMatch wd:Q811909 ;
