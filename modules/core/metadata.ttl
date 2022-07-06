@@ -81,4 +81,8 @@ Github: https://github.com/landrs-tookkit/drone"""@en ;
                                prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/equipment#> ;
                                rdfs:seeAlso <https://www.landrs.org> ;
                                skos:note "Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.";
+                               owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
+                               owl:imports <https://www.w3.org/ns/prov-o> ;
+                               owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl>;
+                               owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl>;
 .
