@@ -1,0 +1,2734 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/drone/ont/"
+     xml:base="https://w3id.org/drone/ont/"
+     xmlns:ont="https://w3id.org/drone/ont/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:OPLaX="https://w3id.org/OPLaX/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:resource="http://semanticscience.org/resource/">
+    <owl:Ontology rdf:about="https://w3id.org/drone/ont/">
+        <owl:versionIRI rdf:resource="https://w3id.org/drone/ont/0.1.0"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl"/>
+        <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
+        <terms:abstract>The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach </terms:abstract>
+        <terms:contributor rdf:nodeID="genid1"/>
+        <terms:contributor rdf:nodeID="genid2"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-14</terms:created>
+        <terms:creator rdf:nodeID="genid3"/>
+        <terms:description xml:lang="en">The DRONE Ontology is intended to be a light weight Ontology for drone operations constructed from Ontology Design Patterns connecting and aligning OGC and W3C standard Ontologies.
+This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability. The Merology was extracted from the Semantic Science Integrated Ontology to provide a lightweight set of parthood relations. 
+Contributions and Discussion Welcomed.
+Github: https://github.com/landrs-tookkit/drone</terms:description>
+        <terms:license rdf:resource="https://spdx.org/licenses/CC0-1.0"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-05</terms:modified>
+        <terms:publisher rdf:nodeID="genid4"/>
+        <terms:rights xml:lang="en">This vocabulary is distributed under Creative Commons Attribution Zero 1.0 Universal License - https://creativecommons.org/share-your-work/public-domain/cc0</terms:rights>
+        <terms:status>Draft</terms:status>
+        <terms:title xml:lang="en">LANDRS Ontology for Drone Operations</terms:title>
+        <vann:preferredNamespacePrefix>drone</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://w3id.org/drone/ont/</vann:preferredNamespaceUri>
+        <rdfs:seeAlso rdf:resource="https://www.landrs.org"/>
+        <owl:versionInfo xml:lang="en">0.1.0</owl:versionInfo>
+        <skos:note>Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.</skos:note>
+        <schema:license xml:lang="en">https://spdx.org/licenses/CC0-1.0</schema:license>
+    </owl:Ontology>
+    <rdf:Description rdf:nodeID="genid1">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:name>Christopher Sweet</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0001-8214-7177</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid2">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:name>Priscila Saboia Moreira</schema:name>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid3">
+        <rdf:type rdf:resource="https://schema.org/Person"/>
+        <schema:affiliation>University of Notre Dame</schema:affiliation>
+        <schema:email rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">cvardema@nd.edu</schema:email>
+        <schema:name>Charles F. Vardeman II</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://orcid.org/0000-0003-4091-6059</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid4">
+        <rdf:type rdf:resource="https://schema.org/Organization"/>
+        <schema:name>Center for Research Computing, University of Notre Dame</schema:name>
+        <schema:url rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://crc.nd.edu</schema:url>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://semanticscience.org/resource/equivalentTo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://semanticscience.org/resource/equivalentTo"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#closeMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#exactMatch -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#wasQuotedFrom"/>
+    
+
+
+    <!-- https://schema.org/comment -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/comment"/>
+    
+
+
+    <!-- https://schema.org/identifier -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/identifier"/>
+    
+
+
+    <!-- https://schema.org/license -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/license"/>
+    
+
+
+    <!-- https://schema.org/sameAs -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/sameAs"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/hasRelatedPattern -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/OPLaX/hasRelatedPattern"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/isNativeTo -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/OPLaX/isNativeTo"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/reusesAsTemplate -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/OPLaX/reusesAsTemplate"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/wasExtractedFrom -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/OPLaX/wasExtractedFrom"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/component -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/drone/ont/component"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasWhole -->
+
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/drone/ont/hasWhole"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/drone/ont/actualRoute -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/actualRoute">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasRoute"/>
+        <rdfs:label>actual route</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/aircraft -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/aircraft">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#entity"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Aircraft"/>
+        <rdfs:label>aircraft</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/airport -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/airport">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#atLocation"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Airport"/>
+        <rdfs:label>airport</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/arrival -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/arrival">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasEndEvent"/>
+        <rdfs:label>arrival</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/carries -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/carries">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Cargo"/>
+        <rdfs:label xml:lang="en">carries</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Property:P3349"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/contains -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/contains"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/departure -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/departure">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasStartEvent"/>
+        <rdfs:label>departure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/equipmentModel -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/equipmentModel">
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/EquipmentModel"/>
+        <rdfs:label>equipment model</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/equipmentType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/equipmentType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasType"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/EquipmentType"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/drone/ont/equipmentModel"/>
+            <rdf:Description rdf:about="https://w3id.org/drone/ont/equipmentType"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label>equipment type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/filedRoute -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/filedRoute">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasRoute"/>
+        <rdfs:label>filed route</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/firstSegment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/firstSegment">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/segment"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/RouteSegment"/>
+        <rdfs:label>first segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/flightCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/flightCategory">
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/FlightCategory"/>
+        <rdfs:label>flight category</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasComponentPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasComponentPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasDirectPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/isComponentPartOf"/>
+        <terms:description xml:lang="en">has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">has component part</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000369"/>
+        <skos:example xml:lang="en">a human has blood as a component part</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasDirectPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasDirectPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasProperPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/isDirectPartOf"/>
+        <terms:description xml:lang="en">has direct part is a relation to specify a part at a particular level of granularity</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">has direct part</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000273"/>
+        <skos:example xml:lang="en">a car has an engine as a direct part</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasEndEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasEndEvent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasEvent"/>
+        <rdfs:label>hasEndEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasEvent">
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Event"/>
+        <rdfs:label>hasEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasIdentifier">
+        <rdfs:label>hasIdentifier</rdfs:label>
+        <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasIdentifierType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasIdentifierType">
+        <rdfs:label>hasIdentifierType</rdfs:label>
+        <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isLocationOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <terms:description xml:lang="en">has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000028"/>
+        <skos:example xml:lang="en">a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasProperPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasProperPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/isProperPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <terms:description xml:lang="en">has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">has proper part</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000053"/>
+        <skos:example xml:lang="en">a car has an engine as a proper part; a car has a piston as a proper part;</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasRoute -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasRoute">
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Route"/>
+        <rdfs:label>has route</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasStartEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasStartEvent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasEvent"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Event"/>
+        <rdfs:label>hasStartEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasSubactivity -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasSubactivity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/Activity"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Activity"/>
+        <rdfs:label>hasSubactivity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/hasType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/hasType"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/identifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/identifier"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isCarriedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isCarriedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isPartOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/carries"/>
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Cargo"/>
+        <rdfs:label xml:lang="en">is carried by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isComponentPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isComponentPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isDirectPartOf"/>
+        <terms:description xml:lang="en">is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is component part of</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000313"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isContainedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isContainedIn"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isDirectPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isDirectPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isProperPartOf"/>
+        <terms:description xml:lang="en">is direct part of is a relation between a specific part (at some level of granularity) and its whole.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is direct part of</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000310"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isLocatedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isSpatiotemporallyRelatedTo"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/isLocationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <terms:description xml:lang="en">A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]</terms:description>
+        <resource:equivalentTo>OBO_REL:located_in</resource:equivalentTo>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is located in</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000061"/>
+        <skos:example xml:lang="en">A parasite in the interior of a person&apos;s intestine is located in their intestinal lumen.</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isLocationOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isLocationOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isSpatiotemporallyRelatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <terms:description xml:lang="en">A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is location of</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000145"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isLocatedIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <terms:description xml:lang="en">is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000068"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isProperPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isProperPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <terms:description xml:lang="en">is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is proper part of</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000093"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isRelatedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isRelatedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/Entity"/>
+        <rdfs:range rdf:resource="http://semanticscience.org/resource/Entity"/>
+        <terms:description xml:lang="en">A is related to B iff there is some relation between A and B.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is related to</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000001"/>
+        <schema:comment>&apos;is related to&apos; is the top level relation in SIO</schema:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isSpatiotemporallyRelatedTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isSpatiotemporallyRelatedTo">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isRelatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <terms:description xml:lang="en">A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is spatiotemporally related to</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000322"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/isSurroundedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/isSurroundedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/isContainedIn"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/surrounds"/>
+        <terms:description xml:lang="en">A &apos;is surrounded by&apos; B iff the A &apos;is contained by&apos; B and A &apos;is adjacent to&apos; B or A &apos;is directly connected to&apos; B.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">is surrounded by</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000323"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/lastSegment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/lastSegment">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/segment"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/RouteSegment"/>
+        <rdfs:label>last segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/manufacturedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/manufacturedBy">
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Manufacturer"/>
+        <rdfs:label>manufactured by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/manufactures -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/manufactures">
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/manufacturedBy"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+        <rdfs:label>manufactures</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/modelNumber -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/modelNumber">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/drone/ont/equipmentModel"/>
+            <rdf:Description rdf:about="https://w3id.org/drone/ont/modelNumber"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/nextSegment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/nextSegment">
+        <rdfs:label>next segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/operatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/operatedBy">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>operator</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/operatorOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/operatorOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/operatedBy"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+        <rdfs:label>operator Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ownedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/ownedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/ownerOf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>owner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ownerOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/ownerOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>owner of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/partOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/partOf"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/plannedRoute -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/plannedRoute">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/hasRoute"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Route"/>
+        <rdfs:label>planned route</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/previousSegment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/previousSegment">
+        <rdfs:label>previous segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/registeredBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/registeredBy">
+        <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>registered by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/registrationNumber -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/registrationNumber">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/segment -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/segment">
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/RouteSegment"/>
+        <rdfs:label>segment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/segmentOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/segmentOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/drone/ont/segment"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Route"/>
+        <rdfs:label>segment of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/serialNumber -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/serialNumber">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/subActivityOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/subActivityOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/partOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/Activity"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/Activity"/>
+        <rdfs:label>subActivityOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/surrounds -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/drone/ont/surrounds">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/contains"/>
+        <terms:description xml:lang="en">A &apos;surrounds&apos; B iff the A &apos;contains&apos; B and A &apos;is adjacent to&apos; B or A &apos;is directly connected to&apos; B.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">surrounds</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000324"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/drone/ont/callSign -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/callSign">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifierAsText"/>
+        <rdfs:label>call sign</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/flightNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/flightNumber">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifierAsText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>flight number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/identifierAsText -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/identifierAsText">
+        <rdfs:label>identifierAsText</rdfs:label>
+        <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/modelNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/modelNumber"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/registrationDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/registrationDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>registration date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/registrationNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/registrationNumber"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/routeId -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/routeId">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/drone/ont/identifierAsText"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>route id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/drone/ont/serialNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/drone/ont/serialNumber"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#BusinessEntity -->
+
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#BusinessEntity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/org#FormalOrganization"/>
+        <rdfs:label>Business entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/Entity -->
+
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/Entity"/>
+    
+
+
+    <!-- http://wikidata.org/entity/Q2916098 -->
+
+
+    <owl:Class rdf:about="http://wikidata.org/entity/Q2916098"/>
+    
+
+
+    <!-- http://wikidata.org/entity/Q319224 -->
+
+
+    <owl:Class rdf:about="http://wikidata.org/entity/Q319224"/>
+    
+
+
+    <!-- http://wikidata.org/entity/Q4810574 -->
+
+
+    <owl:Class rdf:about="http://wikidata.org/entity/Q4810574"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasIdentifier"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/Identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasIdentifierType"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/IDType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/identifierAsText"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
+    
+
+
+    <!-- http://www.w3.org/ns/org#FormalOrganization -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/org#FormalOrganization"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Activity">
+        <owl:equivalentClass rdf:resource="https://w3id.org/drone/ont/Activity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Agent">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity">
+        <owl:equivalentClass rdf:resource="https://w3id.org/drone/ont/Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
+
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
+        <owl:equivalentClass rdf:resource="https://w3id.org/drone/ont/Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Platform -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Platform"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/System -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/System"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/System -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/System"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
+    
+
+
+    <!-- https://schema.org/SoftwareApplicaion -->
+
+
+    <owl:Class rdf:about="https://schema.org/SoftwareApplicaion"/>
+    
+
+
+    <!-- https://w3id.org/OPLaX/Module -->
+
+
+    <owl:Class rdf:about="https://w3id.org/OPLaX/Module"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ASV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/ASV">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/AutonomousRobot"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/SurfaceRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AUV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AUV">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/AutonomousRobot"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnderwaterRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Activity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Activity">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasEvent"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasEndEvent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasStartEvent"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <skos:definition xml:lang="en">An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</skos:definition>
+        <prov:wasQuotedFrom>https://www.w3.org/TR/prov-o/#Activity</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AerialRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AerialRobot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Aircraft"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/RoboticVehice"/>
+        <rdfs:comment xml:lang="en">Aerial Robots are vehicles that move autonomously in the air.</rdfs:comment>
+        <rdfs:label xml:lang="en">Aerial Robot</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Agent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Agent"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Aircraft -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Aircraft">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/manufacturedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/AircraftManufacturer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/operatedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/AircraftOperator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/ownedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/AircraftOwner"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/callSign"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface</rdfs:comment>
+        <rdfs:label xml:lang="en">Aircraft</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q11436"/>
+        <prov:wasQuotedFrom>https://www.wikidata.org/wiki/Q11436</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AircraftManufacturer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AircraftManufacturer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Manufacturer"/>
+        <rdfs:label>Aircraft manufacturer</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q107009743"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AircraftModel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AircraftModel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/EquipmentModel"/>
+        <rdfs:label>Aircraft model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AircraftOperator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AircraftOperator">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/operatorOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/EquipmentOperator"/>
+        <rdfs:label>Aircraft operator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AircraftOwner -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AircraftOwner">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/ownerOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/drone/ont/Aircraft"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/EquipmentOwner"/>
+        <rdfs:label>Aircraft owner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AircraftType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AircraftType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/EquipmentType"/>
+        <rdfs:label>Aircraft type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Airframe -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Airframe">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Body"/>
+        <rdfs:comment xml:lang="en">The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Airframe</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q222946"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Airport -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Airport"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Arrival -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Arrival">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#End"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/airport"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Arrival</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AutomatedRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AutomatedRobot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AutonomousRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AutonomousRobot">
+        <rdfs:subClassOf rdf:resource="http://wikidata.org/entity/Q2916098"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Autopilot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Autopilot">
+        <rdfs:subClassOf rdf:resource="https://schema.org/SoftwareApplicaion"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Body -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Body">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Buoy -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Buoy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnmotorizedVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Cargo -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Cargo">
+        <rdfs:comment xml:lang="en">Goods transported by a vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Cargo</rdfs:label>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q319224"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/CommunicationSystem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/CommunicationSystem">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/CompanionComputer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/CompanionComputer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Payload"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+        <rdfs:comment>A companion computer is a device that travels on-board the vehicle and controls/communicates with the autopilot over a low-latency link. Apps running on a companion computer can perform computationally intensive or time-sensitive tasks, and add much greater intelligence than is provided by the autopilot alone.</rdfs:comment>
+        <rdfs:label xml:lang="en">Companion Computer</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://w3id.org/s3n/MicroController"/>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q944780"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Component -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Component">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+        <rdfs:comment xml:lang="en">Subclass of equipment to enumerate composition of a UxV</rdfs:comment>
+        <rdfs:label xml:lang="en">Component</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q811909"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Departure -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Departure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Start"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Event"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/airport"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Departure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Entity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Entity">
+        <terms:description xml:lang="en">Every thing is an entity.</terms:description>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/drone/ont/"/>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <skos:exactMatch rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Equipment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/identifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/manufacturedBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/operatedBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/ownedBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/registeredBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/equipmentModel"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/equipmentType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/modelNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/registrationNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/registrationDate"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Collective term for all items that are required to exercise a certain activity</rdfs:comment>
+        <rdfs:label>Equipment</rdfs:label>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q10273457"/>
+        <prov:wasQuotedFrom>https://www.wikidata.org/wiki/Q10273457</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/EquipmentModel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/EquipmentModel">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasIdentifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/identifier"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/equipmentType"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/modelNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Equipment model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/EquipmentOperator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/EquipmentOperator">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/operatorOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>Equipment operator</rdfs:label>
+        <skos:definition xml:lang="en">The Agent who is operating drone equipment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/EquipmentOwner -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/EquipmentOwner">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/ownerOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>Equipment owner</rdfs:label>
+        <skos:definition xml:lang="en">The Person/Organization that is the owner of the drone equipment</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/EquipmentType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/EquipmentType">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Type"/>
+        <rdfs:label>Equipment type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Event -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Event">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:label>Event</rdfs:label>
+        <skos:definition xml:lang="en">An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities.</skos:definition>
+        <prov:wasQuotedFrom xml:lang="en">https://www.w3.org/TR/prov-o/#InstantaneousEvent</prov:wasQuotedFrom>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Flight -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Flight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Mission"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/operatedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/drone/ont/AircraftOperator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/aircraft"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/actualRoute"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/arrival"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/departure"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/flightCategory"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/plannedRoute"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/flightNumber"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Flight</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/FlightCategory -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/FlightCategory">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:label>Flight category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/FlightControlSystem -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/FlightControlSystem">
+        <rdfs:comment xml:lang="en">Aircraft system utilized to control flight surfaces</rdfs:comment>
+        <rdfs:label xml:lang="en">Flight Control System</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q11481471"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/FlightControllerBoard -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/FlightControllerBoard">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/System"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/GroundControlStation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/GroundControlStation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/IDType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/IDType">
+        <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Identifier -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Identifier">
+        <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/InstrumentPayload -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/InstrumentPayload">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Payload"/>
+        <rdfs:comment xml:lang="en">Payload that is a instrument platform such as cameras, atmospheric sensors, etc</rdfs:comment>
+        <rdfs:label xml:lang="en">Instrument Payload</rdfs:label>
+        <skos:exactMatch rdf:resource="https://www.wikidata.org/wiki/Q3099911"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Manufacturer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Manufacturer">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <rdfs:label>Manufacturer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Mission -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Mission">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Activity"/>
+        <rdfs:comment>a specific task with which a vehicle is charged</rdfs:comment>
+        <rdfs:label>Mission</rdfs:label>
+        <skos:closeMatch rdf:resource="http://wikidata.org/entity/Q13425175"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/MotorizedVehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/MotorizedVehicle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Payload -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Payload">
+        <rdfs:subClassOf rdf:resource="http://wikidata.org/entity/Q319224"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Cargo"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Product -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Product"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ROV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/ROV">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/MotorizedVehicle"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnderwaterRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RemotelyPilotedRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/RemotelyPilotedRobot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Robot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Robot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RoboticVehice -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/RoboticVehice"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RoboticVehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/RoboticVehicle">
+        <rdfs:subClassOf rdf:resource="http://wikidata.org/entity/Q4810574"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Robot"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Route -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Route">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalAggregate"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/segment"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/firstSegment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/lastSegment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/routeId"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Route</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RouteSegment -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/RouteSegment">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/segmentOf"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/nextSegment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/drone/ont/previousSegment"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Route segment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/SmartSensor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/SmartSensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:comment xml:lang="en">Smart-Sensor - A SmartSensor is composed of one or more Sensors together with a MicroController that implements different Algorithms, and makes Algorithm Executions on the result of the Observations these Sensors make to output a resulting value for some Indicator. This value may then be communicated by some CommunicatingSystemCommunicatingSystem.</rdfs:comment>
+        <rdfs:label xml:lang="en">Smart Sensor</rdfs:label>
+        <schema:sameAs rdf:resource="http://w3id.org/s3n/SmartSensor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/SurfaceRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/SurfaceRobot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/RoboticVehicle"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/SurfaceVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/SurfaceVehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/SurfaceVehicle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Type -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Type"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UAS -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UAS">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+        <rdfs:comment xml:lang="en">An Unmanned Aerial Vehicle, ground-based controller and communication system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unmanned Aircraft System</rdfs:label>
+        <skos:altLabel xml:lang="en">UAS</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Unmanned Aircraft System</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UAV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UAV">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/AerialRobot"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Aircraft"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/MotorizedVehicle"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UxV"/>
+        <rdfs:comment>An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unmanned Aerial Vehicle</rdfs:label>
+        <skos:altLabel xml:lang="en">UAV</skos:altLabel>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q484000"/>
+        <skos:prefLabel xml:lang="en">Unmanned Aerial Vehicle</skos:prefLabel>
+        <component rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UAVComponent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UAVComponent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <rdfs:comment xml:lang="en">Component of a Unmanned Aerial Vehicle</rdfs:comment>
+        <rdfs:label xml:lang="en">Unmanned Aircraft Component</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q28816538"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/USV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/USV">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/MotorizedVehicle"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/SurfaceRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterGlider -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UnderwaterGlider">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/AUV"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnmotorizedVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterRobot -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UnderwaterRobot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/RoboticVehice"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnderwaterVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterVehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UnderwaterVehicle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnmotorizedVehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UnmotorizedVehicle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UxV -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/UxV">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Agent"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Vehicle"/>
+        <rdfs:comment xml:lang="en">An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own.</rdfs:comment>
+        <rdfs:label xml:lang="en">Unmanned Vehicle</rdfs:label>
+        <skos:altLabel xml:lang="en">UxV</skos:altLabel>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q1527901"/>
+        <skos:prefLabel xml:lang="en">Unmanned Vehicle</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Vehicle -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Vehicle">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+        <rdfs:comment xml:lang="en">A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Vehicle</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q42889"/>
+        <schema:sameAs rdf:resource="https://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Vessel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Vessel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/MotorizedVehicle"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/SurfaceVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://wikidata.org/entity/Q178848 -->
+
+
+    <rdf:Description rdf:about="http://wikidata.org/entity/Q178848"/>
+    
+
+
+    <!-- https://data.nasa.gov/ontologies/atmonto/ATM# -->
+
+
+    <owl:NamedIndividual rdf:about="https://data.nasa.gov/ontologies/atmonto/ATM#"/>
+    
+
+
+    <!-- https://data.nasa.gov/ontologies/atmonto/equipment# -->
+
+
+    <owl:NamedIndividual rdf:about="https://data.nasa.gov/ontologies/atmonto/equipment#"/>
+    
+
+
+    <!-- https://docs.ogc.org/per/20-020.html#Ontologies-Component -->
+
+
+    <owl:NamedIndividual rdf:about="https://docs.ogc.org/per/20-020.html#Ontologies-Component"/>
+    
+
+
+    <!-- https://semantics.aero/pages/swim-vocabulary# -->
+
+
+    <owl:NamedIndividual rdf:about="https://semantics.aero/pages/swim-vocabulary#"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/">
+        <prov:wasInfluencedBy rdf:resource="https://data.nasa.gov/ontologies/atmonto/ATM#"/>
+        <prov:wasInfluencedBy rdf:resource="https://data.nasa.gov/ontologies/atmonto/equipment#"/>
+        <prov:wasInfluencedBy rdf:resource="https://docs.ogc.org/per/20-020.html#Ontologies-Component"/>
+        <prov:wasInfluencedBy rdf:resource="https://semantics.aero/pages/swim-vocabulary#"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ASV -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/ASV">
+        <prov:wasDerivedFrom rdf:nodeID="genid55"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid55">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AUV -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AUV">
+        <prov:wasDerivedFrom rdf:nodeID="genid56"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid56">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AutomatedRobot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AutomatedRobot">
+        <prov:wasDerivedFrom rdf:nodeID="genid57"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid57">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AutonomousRobot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AutonomousRobot">
+        <prov:wasDerivedFrom rdf:nodeID="genid58"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid58">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Autopilot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Autopilot">
+        <isPartOf rdf:nodeID="genid59"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid59">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Body -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Body">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
+        <isPartOf rdf:nodeID="genid60"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid60">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/UxV"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Buoy -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Buoy">
+        <prov:wasDerivedFrom rdf:nodeID="genid61"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid61">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/CommunicationSystem -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/CommunicationSystem">
+        <isPartOf rdf:nodeID="genid62"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid62">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/FlightControllerBoard -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/FlightControllerBoard">
+        <isPartOf rdf:nodeID="genid63"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid63">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/GroundControlStation -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/GroundControlStation">
+        <isPartOf rdf:nodeID="genid64"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid64">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/MotorizedVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/MotorizedVehicle">
+        <prov:wasDerivedFrom rdf:nodeID="genid65"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid65">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Payload -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Payload">
+        <isPartOf rdf:nodeID="genid66"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid66">
+        <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
+        <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ROV -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/ROV">
+        <prov:wasDerivedFrom rdf:nodeID="genid67"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid67">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RemotelyPilotedRobot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/RemotelyPilotedRobot">
+        <prov:wasDerivedFrom rdf:nodeID="genid68"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid68">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Robot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Robot">
+        <prov:wasDerivedFrom rdf:nodeID="genid69"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid69">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/RoboticVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/RoboticVehicle">
+        <prov:wasDerivedFrom rdf:nodeID="genid70"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid70">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/SurfaceRobot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/SurfaceRobot">
+        <prov:wasDerivedFrom rdf:nodeID="genid71"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid71">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/SurfaceVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/SurfaceVehicle">
+        <prov:wasDerivedFrom rdf:nodeID="genid72"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid72">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/USV -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/USV">
+        <prov:wasDerivedFrom rdf:nodeID="genid73"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid73">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterGlider -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterGlider">
+        <prov:wasDerivedFrom rdf:nodeID="genid74"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid74">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterRobot -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterRobot">
+        <prov:wasDerivedFrom rdf:nodeID="genid75"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid75">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnderwaterVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterVehicle">
+        <prov:wasDerivedFrom rdf:nodeID="genid76"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid76">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/UnmotorizedVehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnmotorizedVehicle">
+        <prov:wasDerivedFrom rdf:nodeID="genid77"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid77">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Vessel -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Vessel">
+        <prov:wasDerivedFrom rdf:nodeID="genid78"/>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid78">
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <terms:source rdf:resource="https://www.mdpi.com/185614"/>
+        <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
+        <schema:identifier>https://dx.doi.org/10.3390%2Fs17030569</schema:identifier>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/activity -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/activity">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:comment>Drone core module for Events and Activities</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_flight_ontology"/>
+        <skos:note>Was extracted from the OGC Testbed 16: Aviation Engineering Report</skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/droneeqp -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/droneeqp">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:comment xml:lang="en">Uses Trajectory Ontology Design Pattern</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_equipment_ontology"/>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_route_ontology"/>
+        <OPLaX:reusesAsTemplate rdf:resource="https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/equipment -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/equipment">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_equipment_ontology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/identifier -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/identifier">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <OPLaX:hasRelatedPattern rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/reification</OPLaX:hasRelatedPattern>
+        <OPLaX:wasExtractedFrom rdf:resource="https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/mereology -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/mereology">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:comment>Drone core module for Merological Relationships</rdfs:comment>
+        <skos:note>Was extracted from the SIO merelogical patterns</skos:note>
+        <OPLaX:hasRelatedPattern rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/reification</OPLaX:hasRelatedPattern>
+        <OPLaX:wasExtractedFrom rdf:resource="http://semanticscience.org/resource/"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/mission -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/mission">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_flight_ontology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/payload -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/payload">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/module/vehicle -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/module/vehicle">
+        <rdf:type rdf:resource="https://w3id.org/OPLaX/Module"/>
+        <rdfs:seeAlso rdf:resource="https://docs.ogc.org/per/20-020.html#_aircraft_ontology"/>
+        <skos:note>This is a generalization of the OGC Aviation ontology to support other vehicle classes than Aircraft. </skos:note>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/ASV">
+        <rdfs:comment xml:lang="en">Vehicle that operates on the surface of the water without a crew</rdfs:comment>
+        <rdfs:label xml:lang="en">Autonomous Surface Vehicle</rdfs:label>
+        <skos:altLabel>ASV</skos:altLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/AUV">
+        <rdfs:comment xml:lang="en">An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator.</rdfs:comment>
+        <rdfs:label xml:lang="en">Autonomous Underwater Vehicle</rdfs:label>
+        <skos:altLabel xml:lang="en">AUV</skos:altLabel>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q257406"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/AutomatedRobot">
+        <rdfs:label xml:lang="en">Automated Robot</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/AutonomousRobot">
+        <rdfs:comment xml:lang="en">An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence).</rdfs:comment>
+        <rdfs:label xml:lang="en">Autonomous Robot</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Autopilot">
+        <rdfs:comment xml:lang="en">Software to control and navigate an aircraft</rdfs:comment>
+        <rdfs:label xml:lang="en">Autopilot</rdfs:label>
+        <skos:altLabel xml:lang="en">Flight Controller</skos:altLabel>
+        <skos:altLabel xml:lang="en">Flight Controller Board</skos:altLabel>
+        <schema:sameAs rdf:resource="http://w3id.org/s3n/Algorithm"/>
+        <component rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Body">
+        <rdfs:comment xml:lang="en">Body of the UxV, for a UAV this would be an airframe</rdfs:comment>
+        <rdfs:label xml:lang="en">UxV Body</rdfs:label>
+        <component rdf:resource="https://w3id.org/drone/ont/UxV"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Buoy">
+        <rdfs:comment xml:lang="en">A floating device that can be anchored (stationary) or allowed to drift with ocean currents.</rdfs:comment>
+        <rdfs:label xml:lang="en">Buoy</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q30026"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/CommunicationSystem">
+        <rdfs:comment xml:lang="en">Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight.</rdfs:comment>
+        <rdfs:label xml:lang="en">Communication System</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q31479975"/>
+        <schema:sameAs rdf:resource="http://w3id.org/s3n/CommunicatingSystem"/>
+        <component rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/FlightControllerBoard">
+        <rdfs:comment xml:lang="en">A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly.</rdfs:comment>
+        <rdfs:label xml:lang="en">Flight Controller Board</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://dronekit-python.readthedocs.io/en/latest/develop/companion-computers.html"/>
+        <schema:sameAs rdf:resource="http://w3id.org/s3n/MicroController"/>
+        <component rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/GroundControlStation">
+        <rdfs:comment xml:lang="en">A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones).</rdfs:comment>
+        <rdfs:label xml:lang="en">Ground Control Station</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Ground_control_station"/>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q4118990"/>
+        <component rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/MotorizedVehicle">
+        <rdfs:label xml:lang="en">Motorized Vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Payload">
+        <rdfs:comment xml:lang="en">Mission load on a vehicle</rdfs:comment>
+        <rdfs:comment xml:lang="en">Unmanned vehicle payload</rdfs:comment>
+        <rdfs:label xml:lang="en">Payload</rdfs:label>
+        <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q21211206"/>
+        <component rdf:resource="https://w3id.org/drone/ont/UAS"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/ROV">
+        <rdfs:label xml:lang="en">Remotely Operated Underwater Vehicle</rdfs:label>
+        <skos:altLabel xml:lang="en">ROV</skos:altLabel>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q618465"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/RemotelyPilotedRobot">
+        <rdfs:label xml:lang="en">Remotely Piloted Robot</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Robot">
+        <rdfs:comment xml:lang="en">Mechanical or virtual artificial agent carrying out physical activities</rdfs:comment>
+        <rdfs:label xml:lang="en">Robot</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q11012"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/RoboticVehicle">
+        <rdfs:comment xml:lang="en">Robotic vehicles are machines that move autonomously on the ground, in the air, undersea, or in space. Such vehicles are “unmanned,” in the sense that no humans are on board. In general, these vehicles move by themselves, under their own power, with sensors and computational resources onboard to guide their motion.</rdfs:comment>
+        <rdfs:label xml:lang="en">Robotic Vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/SurfaceRobot">
+        <rdfs:comment xml:lang="en">Surface Robots are vehicles that move autonomously on the water surface.</rdfs:comment>
+        <rdfs:label xml:lang="en">Underwater Robot</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/SurfaceVehicle">
+        <rdfs:label xml:lang="en">Surface Vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/USV">
+        <rdfs:comment xml:lang="en">Vehicle that operates on the surface of the water without a crew</rdfs:comment>
+        <rdfs:label xml:lang="en">Unmanned Surface Vehicle</rdfs:label>
+        <skos:altLabel xml:lang="en">USV</skos:altLabel>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q4419860"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/UnderwaterGlider">
+        <rdfs:comment xml:lang="en">An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float, but unlike a float, which can only move up and down, an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth, the glider switches to positive buoyancy to climb back up, and the cycle is then repeated.</rdfs:comment>
+        <rdfs:label xml:lang="en">Underwater Glider</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q2634473"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/UnderwaterRobot">
+        <rdfs:comment xml:lang="en">Underwater Robots are vehicles that move autonomously underwater.</rdfs:comment>
+        <rdfs:label xml:lang="en">Underwater Robot</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/UnderwaterVehicle">
+        <rdfs:label xml:lang="en">Underwater Vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/UnmotorizedVehicle">
+        <rdfs:label xml:lang="en">Unmotorized Vehicle</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Vessel">
+        <rdfs:comment xml:lang="en">Vehicle that is a watercraft, boat, or ship. Note: Wikidata definition of vessel includes spaceship this drone:Vessel is a subClassOf wikidata vessel.</rdfs:comment>
+        <rdfs:label xml:lang="en">Vessel</rdfs:label>
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q16391167"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/modelNumber">
+        <rdfs:label>model number</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/registrationNumber">
+        <rdfs:label>registration number</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/serialNumber">
+        <rdfs:label>serial number</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://w3id.org/drone/ont/hasIdentifierType"/>
+        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Identifier"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

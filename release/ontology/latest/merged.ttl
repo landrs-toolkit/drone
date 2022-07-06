@@ -1,0 +1,1028 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix oplax: <https://w3id.org/OPLaX/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s3n: <http://w3id.org/s3n/> .
+@prefix sdo: <https://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://purl.org/goodrelations/v1#BusinessEntity> a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Business entity" ;
+    rdfs:subClassOf org:FormalOrganization .
+
+drone:ASV a rdfs:Class ;
+    rdfs:label "Autonomous Surface Vehicle"@en ;
+    rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+    rdfs:subClassOf drone:AutonomousRobot,
+        drone:SurfaceRobot ;
+    skos:altLabel "ASV" ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:AUV a rdfs:Class ;
+    rdfs:label "Autonomous Underwater Vehicle"@en ;
+    rdfs:comment "An autonomous underwater vehicle (AUV) is a robot that travels underwater without requiring input from an operator."@en ;
+    rdfs:subClassOf drone:AutonomousRobot,
+        drone:UnderwaterRobot ;
+    skos:altLabel "AUV"@en ;
+    skos:exactMatch wd:Q257406 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:AerialRobot a rdfs:Class ;
+    rdfs:label "Aerial Robot"@en ;
+    rdfs:comment "Aerial Robots are vehicles that move autonomously in the air."@en ;
+    rdfs:subClassOf drone:Aircraft,
+        drone:RoboticVehice .
+
+drone:Airframe a rdfs:Class ;
+    rdfs:label "Airframe"@en ;
+    rdfs:comment "The mechanical structure of an aircraft is known as the airframe. This structure is typically considered to include the fuselage, undercarriage, empennage and wings, and exclude the propulsion system."@en ;
+    rdfs:subClassOf drone:Body ;
+    skos:exactMatch wd:Q222946 .
+
+drone:AutomatedRobot a rdfs:Class ;
+    rdfs:label "Automated Robot"@en ;
+    rdfs:subClassOf drone:Robot ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:AutonomousRobot a rdfs:Class ;
+    rdfs:label "Autonomous Robot"@en ;
+    rdfs:comment "An autonomous robot is a robot that performs behaviors or tasks with a high degree of autonomy (without external influence)."@en ;
+    rdfs:subClassOf wd:Q2916098,
+        drone:Robot ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:Autopilot a rdfs:Class ;
+    rdfs:label "Autopilot"@en ;
+    rdfs:comment "Software to control and navigate an aircraft"@en ;
+    rdfs:subClassOf sdo:SoftwareApplicaion ;
+    skos:altLabel "Flight Controller"@en,
+        "Flight Controller Board"@en ;
+    sdo:sameAs s3n:Algorithm ;
+    drone:component drone:FlightControlSystem ;
+    drone:isPartOf [ a drone:Component ;
+            drone:hasWhole drone:FlightControlSystem ] .
+
+drone:Body a rdfs:Class,
+        drone:UAVComponent ;
+    rdfs:label "UxV Body"@en ;
+    rdfs:comment "Body of the UxV, for a UAV this would be an airframe"@en ;
+    rdfs:subClassOf drone:Product ;
+    drone:component drone:UxV ;
+    drone:isPartOf [ a drone:Component,
+                drone:UAVComponent ;
+            drone:hasWhole drone:UxV ] .
+
+drone:Buoy a rdfs:Class ;
+    rdfs:label "Buoy"@en ;
+    rdfs:comment "A floating device that can be anchored (stationary) or allowed to drift with ocean currents."@en ;
+    rdfs:subClassOf drone:UnmotorizedVehicle ;
+    skos:exactMatch wd:Q30026 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:CommunicationSystem a rdfs:Class ;
+    rdfs:label "Communication System"@en ;
+    rdfs:comment "Communication System, frequency and protocol by which a UxS communicates. For example Civilian UAV communications systems typically operate on frequencies of 2.4 GHz and 5.8 GHz. UAV communications systems work by using one frequency to control the aerial vehicle from the ground via a remote pilot while the other frequency is used to beam or relay First-Person View (FPV) video. By utilizing high-quality, reliable communications links, civilian UAVs are able to relay aerial visuals and data to those on the ground with ease, while still remaining in flight."@en ;
+    rdfs:subClassOf ssn:System,
+        drone:Product ;
+    skos:exactMatch wd:Q31479975 ;
+    sdo:sameAs s3n:CommunicatingSystem ;
+    drone:component drone:UAS ;
+    drone:isPartOf [ a drone:Component,
+                drone:UAVComponent ;
+            drone:hasWhole drone:UAS ] .
+
+drone:CompanionComputer a rdfs:Class ;
+    rdfs:label "Companion Computer"@en ;
+    rdfs:comment "A companion computer is a device that travels on-board the vehicle and controls/communicates with the autopilot over a low-latency link. Apps running on a companion computer can perform computationally intensive or time-sensitive tasks, and add much greater intelligence than is provided by the autopilot alone." ;
+    rdfs:seeAlso s3n:MicroController ;
+    rdfs:subClassOf ssn:System,
+        drone:Payload,
+        drone:Product ;
+    skos:exactMatch wd:Q944780 .
+
+drone:Component a rdfs:Class ;
+    rdfs:label "Component"@en ;
+    rdfs:comment "Subclass of equipment to enumerate composition of a UxV"@en ;
+    rdfs:subClassOf drone:Equipment ;
+    skos:exactMatch wd:Q811909 .
+
+drone:EquipmentOperator a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Equipment operator" ;
+    rdfs:subClassOf prov:Agent ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty drone:operatorOf ;
+            owl:someValuesFrom drone:Equipment ] ;
+    skos:definition "The Agent who is operating drone equipment"@en .
+
+drone:FlightControlSystem a rdfs:Class ;
+    rdfs:label "Flight Control System"@en ;
+    rdfs:comment "Aircraft system utilized to control flight surfaces"@en ;
+    skos:exactMatch wd:Q11481471 .
+
+drone:FlightControllerBoard a rdfs:Class ;
+    rdfs:label "Flight Controller Board"@en ;
+    rdfs:comment "A flight controller (FC) is a small circuit board of varying complexity. Its function is to direct the RPM of each motor in response to input. A command from the pilot for the multi-rotor to move forward is fed into the flight controller, which determines how to manipulate the motors accordingly."@en ;
+    rdfs:seeAlso <https://dronekit-python.readthedocs.io/en/latest/develop/companion-computers.html> ;
+    rdfs:subClassOf sosa:System,
+        drone:Product ;
+    sdo:sameAs s3n:MicroController ;
+    drone:component drone:FlightControlSystem ;
+    drone:isPartOf [ a drone:Component ;
+            drone:hasWhole drone:FlightControlSystem ] .
+
+drone:GroundControlStation a rdfs:Class ;
+    rdfs:label "Ground Control Station"@en ;
+    rdfs:comment "A ground control station (GCS) is a land- or sea-based control center that provides the facilities for human control of Unmanned Aerial Vehicles (UAVs or drones)."@en ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Ground_control_station> ;
+    rdfs:subClassOf drone:Product ;
+    skos:exactMatch wd:Q4118990 ;
+    drone:component drone:UAS ;
+    drone:isPartOf [ a drone:Component ;
+            drone:hasWhole drone:UAS ] .
+
+drone:MotorizedVehicle a rdfs:Class ;
+    rdfs:label "Motorized Vehicle"@en ;
+    rdfs:subClassOf drone:Vehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:Payload a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Payload"@en ;
+    rdfs:comment "Mission load on a vehicle"@en,
+        "Unmanned vehicle payload"@en ;
+    rdfs:subClassOf wd:Q319224,
+        drone:Cargo ;
+    skos:closeMatch <https://www.wikidata.org/wiki/Q21211206> ;
+    drone:component drone:UAS ;
+    drone:isPartOf [ a drone:Component ;
+            drone:hasWhole drone:UAS ] .
+
+drone:ROV a rdfs:Class ;
+    rdfs:label "Remotely Operated Underwater Vehicle"@en ;
+    rdfs:subClassOf drone:MotorizedVehicle,
+        drone:UnderwaterRobot ;
+    skos:altLabel "ROV"@en ;
+    skos:exactMatch wd:Q618465 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:RemotelyPilotedRobot a rdfs:Class ;
+    rdfs:label "Remotely Piloted Robot"@en ;
+    rdfs:subClassOf drone:Robot ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:Robot a rdfs:Class ;
+    rdfs:label "Robot"@en ;
+    rdfs:comment "Mechanical or virtual artificial agent carrying out physical activities"@en ;
+    rdfs:subClassOf drone:Product ;
+    skos:exactMatch wd:Q11012 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:RoboticVehicle a rdfs:Class ;
+    rdfs:label "Robotic Vehicle"@en ;
+    rdfs:comment "Robotic vehicles are machines that move autonomously on the ground, in the air, undersea, or in space. Such vehicles are “unmanned,” in the sense that no humans are on board. In general, these vehicles move by themselves, under their own power, with sensors and computational resources onboard to guide their motion."@en ;
+    rdfs:subClassOf wd:Q4810574,
+        drone:Robot,
+        drone:Vehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:SmartSensor a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Smart Sensor"@en ;
+    rdfs:comment "Smart-Sensor - A SmartSensor is composed of one or more Sensors together with a MicroController that implements different Algorithms, and makes Algorithm Executions on the result of the Observations these Sensors make to output a resulting value for some Indicator. This value may then be communicated by some CommunicatingSystemCommunicatingSystem."@en ;
+    rdfs:subClassOf sosa:Platform,
+        ssn:System ;
+    sdo:sameAs s3n:SmartSensor .
+
+drone:SurfaceRobot a rdfs:Class ;
+    rdfs:label "Underwater Robot"@en ;
+    rdfs:comment "Surface Robots are vehicles that move autonomously on the water surface."@en ;
+    rdfs:subClassOf drone:RoboticVehicle,
+        drone:SurfaceVehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:SurfaceVehicle a rdfs:Class ;
+    rdfs:label "Surface Vehicle"@en ;
+    rdfs:subClassOf drone:Vehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UAS a rdfs:Class ;
+    rdfs:label "Unmanned Aircraft System"@en ;
+    rdfs:comment "An Unmanned Aerial Vehicle, ground-based controller and communication system."@en ;
+    rdfs:subClassOf drone:Product ;
+    skos:altLabel "UAS"@en ;
+    skos:prefLabel "Unmanned Aircraft System"@en .
+
+drone:UAV a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Unmanned Aerial Vehicle"@en ;
+    rdfs:comment "An aircraft without a human pilot on board and a type of unmanned vehicle. UAVs are a component of an unmanned aircraft system (UAS); which include a UAV, a ground-based controller, and a system of communications between the two. The flight of UAVs may operate with various degrees of autonomy: either under remote control by a human operator or autonomously by onboard computers." ;
+    rdfs:subClassOf sosa:FeatureOfInterest,
+        sosa:Platform,
+        drone:AerialRobot,
+        drone:Aircraft,
+        drone:MotorizedVehicle,
+        drone:UxV ;
+    skos:altLabel "UAV"@en ;
+    skos:exactMatch wd:Q484000 ;
+    skos:prefLabel "Unmanned Aerial Vehicle"@en ;
+    drone:component drone:UAS .
+
+drone:UAVComponent a rdfs:Class ;
+    rdfs:label "Unmanned Aircraft Component"@en ;
+    rdfs:comment "Component of a Unmanned Aerial Vehicle"@en ;
+    rdfs:subClassOf drone:Component ;
+    skos:exactMatch wd:Q28816538 .
+
+drone:USV a rdfs:Class ;
+    rdfs:label "Unmanned Surface Vehicle"@en ;
+    rdfs:comment "Vehicle that operates on the surface of the water without a crew"@en ;
+    rdfs:subClassOf drone:MotorizedVehicle,
+        drone:SurfaceRobot ;
+    skos:altLabel "USV"@en ;
+    skos:exactMatch wd:Q4419860 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UnderwaterGlider a rdfs:Class ;
+    rdfs:label "Underwater Glider"@en ;
+    rdfs:comment "An underwater glider is a type of autonomous underwater vehicle (AUV) that employs variable-buoyancy propulsion instead of traditional propellers or thrusters. It employs variable buoyancy in a similar way to a profiling float, but unlike a float, which can only move up and down, an underwater glider is fitted with hydrofoils (underwater wings) that allow it to glide forward while descending through the water. At a certain depth, the glider switches to positive buoyancy to climb back up, and the cycle is then repeated."@en ;
+    rdfs:subClassOf drone:AUV,
+        drone:UnmotorizedVehicle ;
+    skos:exactMatch wd:Q2634473 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UnderwaterRobot a rdfs:Class ;
+    rdfs:label "Underwater Robot"@en ;
+    rdfs:comment "Underwater Robots are vehicles that move autonomously underwater."@en ;
+    rdfs:subClassOf drone:RoboticVehice,
+        drone:UnderwaterVehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UnderwaterVehicle a rdfs:Class ;
+    rdfs:label "Underwater Vehicle"@en ;
+    rdfs:subClassOf drone:Vehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UnmotorizedVehicle a rdfs:Class ;
+    rdfs:label "Unmotorized Vehicle"@en ;
+    rdfs:subClassOf drone:Vehicle ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:UxV a rdfs:Class ;
+    rdfs:label "Unmanned Vehicle"@en ;
+    rdfs:comment "An unmanned vehicle or uncrewed vehicle is a vehicle without a person on board. Uncrewed vehicles can either be remote controlled or remote guided vehicles, or they can be autonomous vehicles which are capable of sensing their environment and navigating on their own."@en ;
+    rdfs:subClassOf sosa:Platform,
+        drone:Agent,
+        drone:Vehicle ;
+    skos:altLabel "UxV"@en ;
+    skos:exactMatch wd:Q1527901 ;
+    skos:prefLabel "Unmanned Vehicle"@en .
+
+drone:Vehicle a rdfs:Class ;
+    rdfs:label "Vehicle"@en ;
+    rdfs:comment "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space."@en ;
+    rdfs:subClassOf drone:Equipment ;
+    skos:exactMatch wd:Q42889 ;
+    sdo:sameAs sdo:Vehicle .
+
+drone:Vessel a rdfs:Class ;
+    rdfs:label "Vessel"@en ;
+    rdfs:comment "Vehicle that is a watercraft, boat, or ship. Note: Wikidata definition of vessel includes spaceship this drone:Vessel is a subClassOf wikidata vessel."@en ;
+    rdfs:subClassOf drone:MotorizedVehicle,
+        drone:SurfaceVehicle ;
+    skos:exactMatch wd:Q16391167 ;
+    prov:wasDerivedFrom [ a prov:Entity ;
+            dcterms:source <https://www.mdpi.com/185614> ;
+            dcterms:title "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"@en ;
+            sdo:identifier "https://dx.doi.org/10.3390%2Fs17030569" ] .
+
+drone:AircraftModel a owl:Class ;
+    rdfs:label "Aircraft model" ;
+    rdfs:subClassOf drone:EquipmentModel .
+
+drone:AircraftType a owl:Class ;
+    rdfs:label "Aircraft type" ;
+    rdfs:subClassOf drone:EquipmentType .
+
+drone:Arrival a owl:Class ;
+    rdfs:label "Arrival" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:airport ],
+        time:Instant,
+        prov:End,
+        drone:Event .
+
+drone:Departure a owl:Class ;
+    rdfs:label "Departure" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:airport ],
+        time:Instant,
+        prov:Start,
+        drone:Event .
+
+drone:Entity a owl:Class ;
+    rdfs:label "Entity"@en ;
+    dcterms:description "Every thing is an entity."@en ;
+    rdfs:isDefinedBy drone: ;
+    owl:equivalentClass prov:Entity ;
+    skos:exactMatch sio:SIO_000000 .
+
+drone:Flight a owl:Class ;
+    rdfs:label "Flight" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom drone:AircraftOperator ;
+            owl:onProperty drone:operatedBy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:arrival ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:departure ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:flightCategory ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:flightNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:actualRoute ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:plannedRoute ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:aircraft ],
+        drone:Mission .
+
+drone:InstrumentPayload a owl:Class ;
+    rdfs:label "Instrument Payload"@en ;
+    rdfs:comment "Payload that is a instrument platform such as cameras, atmospheric sensors, etc"@en ;
+    rdfs:subClassOf ssn:System,
+        drone:Payload ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q3099911> .
+
+drone:filedRoute a owl:ObjectProperty ;
+    rdfs:label "filed route" ;
+    rdfs:subPropertyOf drone:hasRoute .
+
+drone:hasComponentPart a owl:ObjectProperty ;
+    rdfs:label "has component part"@en ;
+    dcterms:description "has component part is a relation between a whole and a component part where the component is instrinsic to the whole, and loss of the part would change the kind that it is."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:hasDirectPart ;
+    owl:inverseOf drone:isComponentPartOf ;
+    skos:exactMatch sio:SIO_000369 ;
+    skos:example "a human has blood as a component part"@en .
+
+drone:hasSubactivity a owl:ObjectProperty ;
+    rdfs:label "hasSubactivity" ;
+    rdfs:domain drone:Activity ;
+    rdfs:range drone:Activity ;
+    rdfs:subPropertyOf drone:hasPart .
+
+drone:isCarriedBy a owl:ObjectProperty ;
+    rdfs:label "is carried by"@en ;
+    rdfs:domain drone:Vehicle ;
+    rdfs:range drone:Cargo ;
+    rdfs:subPropertyOf drone:isPartOf ;
+    owl:inverseOf drone:carries .
+
+drone:isSurroundedBy a owl:ObjectProperty ;
+    rdfs:label "is surrounded by"@en ;
+    dcterms:description "A 'is surrounded by' B iff the A 'is contained by' B and A 'is adjacent to' B or A 'is directly connected to' B."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isContainedIn ;
+    owl:inverseOf drone:surrounds ;
+    skos:exactMatch sio:SIO_000323 .
+
+drone:manufactures a owl:ObjectProperty ;
+    rdfs:label "manufactures" ;
+    rdfs:range drone:Equipment ;
+    owl:inverseOf drone:manufacturedBy .
+
+<https://w3id.org/drone/ont/module/activity> a oplax:Module ;
+    rdfs:comment "Drone core module for Events and Activities" ;
+    rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_flight_ontology> ;
+    skos:note "Was extracted from the OGC Testbed 16: Aviation Engineering Report" .
+
+<https://w3id.org/drone/ont/module/droneeqp> a oplax:Module ;
+    rdfs:comment "Uses Trajectory Ontology Design Pattern"@en ;
+    rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_equipment_ontology>,
+        <https://docs.ogc.org/per/20-020.html#_route_ontology> ;
+    oplax:reusesAsTemplate <https://archive.org/services/purl/domain/modular_ontology_design_library/trajectory> .
+
+<https://w3id.org/drone/ont/module/equipment> a oplax:Module ;
+    rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_equipment_ontology> .
+
+<https://w3id.org/drone/ont/module/identifier> a oplax:Module ;
+    oplax:hasRelatedPattern "https://archive.org/services/purl/domain/modular_ontology_design_library/reification"^^rdfs:Literal ;
+    oplax:wasExtractedFrom <https://archive.org/services/purl/domain/modular_ontology_design_library/identifier> .
+
+<https://w3id.org/drone/ont/module/mereology> a oplax:Module ;
+    rdfs:comment "Drone core module for Merological Relationships" ;
+    skos:note "Was extracted from the SIO merelogical patterns" ;
+    oplax:hasRelatedPattern "https://archive.org/services/purl/domain/modular_ontology_design_library/reification"^^rdfs:Literal ;
+    oplax:wasExtractedFrom sio: .
+
+<https://w3id.org/drone/ont/module/mission> a oplax:Module ;
+    rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_flight_ontology> .
+
+<https://w3id.org/drone/ont/module/payload> a oplax:Module .
+
+<https://w3id.org/drone/ont/module/vehicle> a oplax:Module ;
+    rdfs:seeAlso <https://docs.ogc.org/per/20-020.html#_aircraft_ontology> ;
+    skos:note "This is a generalization of the OGC Aviation ontology to support other vehicle classes than Aircraft. " .
+
+drone:serialNumber a owl:DatatypeProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "serial number" ;
+    rdfs:subPropertyOf drone:identifier .
+
+drone:subActivityOf a owl:ObjectProperty ;
+    rdfs:label "subActivityOf" ;
+    rdfs:domain drone:Activity ;
+    rdfs:range drone:Activity ;
+    rdfs:subPropertyOf drone:partOf .
+
+org:Organization owl:equivalentClass org:Organization .
+
+drone:AircraftManufacturer a owl:Class ;
+    rdfs:label "Aircraft manufacturer" ;
+    rdfs:subClassOf drone:Manufacturer ;
+    skos:exactMatch wd:Q107009743 .
+
+drone:AircraftOwner a owl:Class ;
+    rdfs:label "Aircraft owner" ;
+    rdfs:subClassOf drone:EquipmentOwner ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty drone:ownerOf ;
+            owl:someValuesFrom drone:Aircraft ] .
+
+drone:EquipmentOwner a owl:Class ;
+    rdfs:label "Equipment owner" ;
+    rdfs:subClassOf prov:Agent ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty drone:ownerOf ;
+            owl:someValuesFrom drone:Equipment ] ;
+    skos:definition "The Person/Organization that is the owner of the drone equipment"@en .
+
+drone:FlightCategory a owl:Class ;
+    rdfs:label "Flight category" ;
+    rdfs:subClassOf skos:Concept .
+
+drone:IDType a owl:Class ;
+    oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
+
+drone:Mission a owl:Class ;
+    rdfs:label "Mission" ;
+    rdfs:comment "a specific task with which a vehicle is charged" ;
+    rdfs:subClassOf drone:Activity ;
+    skos:closeMatch wd:Q13425175 .
+
+drone:actualRoute a owl:ObjectProperty ;
+    rdfs:label "actual route" ;
+    rdfs:subPropertyOf drone:hasRoute .
+
+drone:aircraft a owl:ObjectProperty ;
+    rdfs:label "aircraft" ;
+    rdfs:range drone:Aircraft ;
+    rdfs:subPropertyOf prov:entity .
+
+drone:arrival a owl:ObjectProperty ;
+    rdfs:label "arrival" ;
+    rdfs:subPropertyOf drone:hasEndEvent .
+
+drone:callSign a owl:DatatypeProperty ;
+    rdfs:label "call sign" ;
+    rdfs:subPropertyOf drone:identifierAsText .
+
+drone:carries a owl:ObjectProperty ;
+    rdfs:label "carries"@en ;
+    rdfs:domain drone:Vehicle ;
+    rdfs:range drone:Cargo ;
+    rdfs:seeAlso <https://www.wikidata.org/wiki/Property:P3349> ;
+    rdfs:subPropertyOf drone:hasPart .
+
+drone:departure a owl:ObjectProperty ;
+    rdfs:label "departure" ;
+    rdfs:subPropertyOf drone:hasStartEvent .
+
+drone:firstSegment a owl:ObjectProperty ;
+    rdfs:label "first segment" ;
+    rdfs:range drone:RouteSegment ;
+    rdfs:subPropertyOf drone:segment .
+
+drone:flightCategory a owl:ObjectProperty ;
+    rdfs:label "flight category" ;
+    rdfs:range drone:FlightCategory .
+
+drone:flightNumber a owl:DatatypeProperty ;
+    rdfs:label "flight number" ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf drone:identifierAsText .
+
+drone:hasDirectPart a owl:ObjectProperty ;
+    rdfs:label "has direct part"@en ;
+    dcterms:description "has direct part is a relation to specify a part at a particular level of granularity"@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:hasProperPart ;
+    owl:inverseOf drone:isDirectPartOf ;
+    skos:exactMatch sio:SIO_000273 ;
+    skos:example "a car has an engine as a direct part"@en .
+
+drone:hasProperPart a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:label "has proper part"@en ;
+    dcterms:description "has proper part is an antisymmetric, irreflexive (normally transitive) relation between a whole and a distinct part."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:hasPart ;
+    owl:inverseOf drone:isProperPartOf ;
+    skos:exactMatch sio:SIO_000053 ;
+    skos:example "a car has an engine as a proper part; a car has a piston as a proper part;"@en .
+
+drone:isComponentPartOf a owl:ObjectProperty ;
+    rdfs:label "is component part of"@en ;
+    dcterms:description "is component part of is a relation between a component and a whole, where the component is instrinsic to the whole, and loss of the part would change the kind that the whole is."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isDirectPartOf ;
+    skos:exactMatch sio:SIO_000313 .
+
+drone:isLocatedIn a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is located in"@en ;
+    dcterms:description "A is located in B iff the spatialtemporial region occupied by A is part of the spatialtemporal region occupied by B. [T][R]"@en ;
+    sio:equivalentTo "OBO_REL:located_in" ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isSpatiotemporallyRelatedTo ;
+    owl:inverseOf drone:isLocationOf ;
+    skos:exactMatch sio:SIO_000061 ;
+    skos:example "A parasite in the interior of a person's intestine is located in their intestinal lumen."@en .
+
+drone:isRelatedTo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "is related to"@en ;
+    dcterms:description "A is related to B iff there is some relation between A and B."@en ;
+    rdfs:domain sio:Entity ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:range sio:Entity ;
+    skos:exactMatch sio:SIO_000001 ;
+    sdo:comment "'is related to' is the top level relation in SIO" .
+
+drone:lastSegment a owl:ObjectProperty ;
+    rdfs:label "last segment" ;
+    rdfs:range drone:RouteSegment ;
+    rdfs:subPropertyOf drone:segment .
+
+drone:nextSegment a owl:ObjectProperty ;
+    rdfs:label "next segment" .
+
+drone:plannedRoute a owl:ObjectProperty ;
+    rdfs:label "planned route" ;
+    rdfs:range drone:Route ;
+    rdfs:subPropertyOf drone:hasRoute .
+
+drone:previousSegment a owl:ObjectProperty ;
+    rdfs:label "previous segment" .
+
+drone:registeredBy a owl:ObjectProperty ;
+    rdfs:label "registered by" ;
+    rdfs:range prov:Agent .
+
+drone:registrationDate a owl:DatatypeProperty ;
+    rdfs:label "registration date" ;
+    rdfs:range xsd:date .
+
+drone:registrationNumber a owl:DatatypeProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "registration number" ;
+    rdfs:subPropertyOf drone:identifier .
+
+drone:routeId a owl:DatatypeProperty ;
+    rdfs:label "route id" ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf drone:identifierAsText .
+
+drone:segmentOf a owl:ObjectProperty ;
+    rdfs:label "segment of" ;
+    rdfs:range drone:Route ;
+    owl:inverseOf drone:segment .
+
+drone:surrounds a owl:ObjectProperty ;
+    rdfs:label "surrounds"@en ;
+    dcterms:description "A 'surrounds' B iff the A 'contains' B and A 'is adjacent to' B or A 'is directly connected to' B."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:contains ;
+    skos:exactMatch sio:SIO_000324 .
+
+drone:AircraftOperator a owl:Class ;
+    rdfs:label "Aircraft operator" ;
+    rdfs:subClassOf drone:EquipmentOperator ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty drone:operatorOf ;
+            owl:someValuesFrom drone:Equipment ] .
+
+drone:EquipmentModel a owl:Class ;
+    rdfs:label "Equipment model" ;
+    rdfs:comment "" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:equipmentType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:modelNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:hasIdentifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:identifier ],
+        owl:Thing .
+
+drone:EquipmentType a owl:Class ;
+    rdfs:label "Equipment type" ;
+    rdfs:subClassOf owl:Thing,
+        drone:Type .
+
+drone:Identifier a owl:Class ;
+    oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
+
+drone:Manufacturer a owl:Class ;
+    rdfs:label "Manufacturer" ;
+    rdfs:subClassOf prov:Agent .
+
+drone:airport a owl:ObjectProperty ;
+    rdfs:label "airport" ;
+    rdfs:range drone:Airport ;
+    rdfs:subPropertyOf prov:atLocation .
+
+drone:hasEndEvent a owl:ObjectProperty ;
+    rdfs:label "hasEndEvent" ;
+    rdfs:subPropertyOf drone:hasEvent .
+
+drone:hasIdentifierType a owl:ObjectProperty ;
+    rdfs:label "hasIdentifierType" ;
+    oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
+
+drone:hasStartEvent a owl:ObjectProperty ;
+    rdfs:label "hasStartEvent" ;
+    rdfs:range drone:Event ;
+    rdfs:subPropertyOf drone:hasEvent .
+
+drone:isDirectPartOf a owl:ObjectProperty ;
+    rdfs:label "is direct part of"@en ;
+    dcterms:description "is direct part of is a relation between a specific part (at some level of granularity) and its whole."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isProperPartOf ;
+    skos:exactMatch sio:SIO_000310 .
+
+drone:isLocationOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is location of"@en ;
+    dcterms:description "A is location of B iff the spatialtemporal region occupied by A has the spatialtemporal region occupied by B as a part. [T][R]"@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isSpatiotemporallyRelatedTo ;
+    skos:exactMatch sio:SIO_000145 .
+
+drone:isProperPartOf a owl:AsymmetricProperty,
+        owl:IrreflexiveProperty,
+        owl:ObjectProperty ;
+    rdfs:label "is proper part of"@en ;
+    dcterms:description "is proper part of is an asymmetric, irreflexive (normally transitive) relation between a part and its distinct whole."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isPartOf ;
+    skos:exactMatch sio:SIO_000093 .
+
+drone:isSpatiotemporallyRelatedTo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "is spatiotemporally related to"@en ;
+    dcterms:description "A is spatiotemporally related to B iff A is in the spatial or temporal vicinity of B"@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isRelatedTo ;
+    skos:exactMatch sio:SIO_000322 .
+
+drone:operatorOf a owl:ObjectProperty ;
+    rdfs:label "operator Of" ;
+    rdfs:range drone:Equipment ;
+    owl:inverseOf drone:operatedBy .
+
+drone:ownedBy a owl:ObjectProperty ;
+    rdfs:label "owner" ;
+    rdfs:range prov:Agent ;
+    owl:inverseOf drone:ownerOf .
+
+drone:Cargo a owl:Class ;
+    rdfs:label "Cargo"@en ;
+    rdfs:comment "Goods transported by a vehicle"@en ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q319224> .
+
+drone:Route a owl:Class ;
+    rdfs:label "Route" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:firstSegment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:lastSegment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:routeId ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:segment ],
+        geo:SpatialObject,
+        time:TemporalAggregate .
+
+drone:RouteSegment a owl:Class ;
+    rdfs:label "Route segment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:nextSegment ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:previousSegment ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:segmentOf ],
+        geo:SpatialObject .
+
+drone:equipmentModel a owl:ObjectProperty ;
+    rdfs:label "equipment model" ;
+    rdfs:domain drone:Equipment ;
+    rdfs:range drone:EquipmentModel .
+
+drone:equipmentType a owl:ObjectProperty ;
+    rdfs:label "equipment type" ;
+    rdfs:range drone:EquipmentType ;
+    rdfs:subPropertyOf drone:hasType ;
+    owl:propertyChainAxiom ( drone:equipmentModel drone:equipmentType ) .
+
+drone:hasEvent a owl:ObjectProperty ;
+    rdfs:label "hasEvent" ;
+    rdfs:range drone:Event .
+
+drone:hasIdentifier a owl:ObjectProperty ;
+    rdfs:label "hasIdentifier" ;
+    oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
+
+drone:hasPart a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "has part"@en ;
+    dcterms:description "has part is a transitive, reflexive and antisymmetric relation between a whole and itself or a whole and its part."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isLocationOf ;
+    owl:inverseOf drone:isPartOf ;
+    skos:exactMatch sio:SIO_000028 ;
+    skos:example "a collection of cars has as a car as a part;a car has an engine as a part; a car has a piston as a part;"@en .
+
+drone:hasRoute a owl:ObjectProperty ;
+    rdfs:label "has route" ;
+    rdfs:range drone:Route .
+
+drone:isPartOf a owl:ObjectProperty,
+        owl:ReflexiveProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "is part of"@en ;
+    dcterms:description "is part of is a transitive, reflexive and anti-symmetric mereological relation between a whole and itself or a part and its whole."@en ;
+    rdfs:isDefinedBy drone: ;
+    rdfs:subPropertyOf drone:isLocatedIn ;
+    skos:exactMatch sio:SIO_000068 .
+
+drone:manufacturedBy a owl:ObjectProperty ;
+    rdfs:label "manufactured by" ;
+    rdfs:range drone:Manufacturer .
+
+drone:modelNumber a owl:DatatypeProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "model number" ;
+    rdfs:subPropertyOf drone:identifier ;
+    owl:propertyChainAxiom ( drone:equipmentModel drone:modelNumber ) .
+
+drone:ownerOf a owl:ObjectProperty ;
+    rdfs:label "owner of" ;
+    rdfs:domain prov:Agent .
+
+owl:Thing rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom drone:Identifier ;
+            owl:onProperty drone:hasIdentifier ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom drone:IDType ;
+            owl:onProperty drone:hasIdentifierType ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty drone:identifierAsText ] .
+
+drone:Aircraft a owl:Class ;
+    rdfs:label "Aircraft"@en ;
+    rdfs:comment "Machine that is able to fly by gaining support from the air other than the reactions of the air against the earth’s surface"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom drone:AircraftManufacturer ;
+            owl:onProperty drone:manufacturedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom drone:AircraftOperator ;
+            owl:onProperty drone:operatedBy ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom drone:AircraftOwner ;
+            owl:onProperty drone:ownedBy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:callSign ],
+        drone:Vehicle ;
+    skos:exactMatch wd:Q11436 ;
+    prov:wasQuotedFrom "https://www.wikidata.org/wiki/Q11436" .
+
+drone:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:subClassOf time:TemporalEntity ;
+    owl:equivalentClass prov:InstantaneousEvent ;
+    skos:definition "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities."@en ;
+    prov:wasQuotedFrom "https://www.w3.org/TR/prov-o/#InstantaneousEvent"@en .
+
+drone:identifierAsText a owl:DatatypeProperty ;
+    rdfs:label "identifierAsText" ;
+    oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
+
+drone:operatedBy a owl:ObjectProperty ;
+    rdfs:label "operator" ;
+    rdfs:range prov:Agent .
+
+drone:segment a owl:ObjectProperty ;
+    rdfs:label "segment" ;
+    rdfs:range drone:RouteSegment .
+
+drone:Activity a owl:Class ;
+    rdfs:label "Activity"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:hasEndEvent ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:hasStartEvent ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:hasEvent ],
+        time:TemporalEntity ;
+    owl:equivalentClass prov:Activity ;
+    skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en ;
+    prov:wasQuotedFrom "https://www.w3.org/TR/prov-o/#Activity" .
+
+prov:Agent rdfs:subClassOf foaf:Agent .
+
+drone:Equipment a owl:Class ;
+    rdfs:label "Equipment" ;
+    rdfs:comment "Collective term for all items that are required to exercise a certain activity"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:equipmentModel ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:ownedBy ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:registeredBy ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:equipmentType ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:modelNumber ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:registrationDate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:registrationNumber ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:hasIdentifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:identifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:manufacturedBy ],
+        [ a owl:Restriction ;
+            owl:minCardinality "0"^^xsd:nonNegativeInteger ;
+            owl:onProperty drone:operatedBy ],
+        owl:Thing ;
+    skos:exactMatch <https://www.wikidata.org/wiki/Q10273457> ;
+    prov:wasQuotedFrom "https://www.wikidata.org/wiki/Q10273457" .
+
+drone: a owl:Ontology ;
+    dcterms:abstract "The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach " ;
+    dcterms:contributor [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Christopher Sweet" ;
+            sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ],
+        [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:name "Priscila Saboia Moreira" ] ;
+    dcterms:created "2022-05-14"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+            sdo:affiliation "University of Notre Dame" ;
+            sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
+            sdo:name "Charles F. Vardeman II" ;
+            sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ] ;
+    dcterms:description """The DRONE Ontology is intended to be a light weight Ontology for drone operations constructed from Ontology Design Patterns connecting and aligning OGC and W3C standard Ontologies.
+This ontology is developed as part of the Sloan Funded LANDRS project to advance UxV data interoperability. The Merology was extracted from the Semantic Science Integrated Ontology to provide a lightweight set of parthood relations. 
+Contributions and Discussion Welcomed.
+Github: https://github.com/landrs-tookkit/drone"""@en ;
+    dcterms:license <https://spdx.org/licenses/CC0-1.0> ;
+    dcterms:modified "2022-07-05"^^xsd:date ;
+    dcterms:publisher [ a sdo:Organization ;
+            owl:sameAs wd:Q178848 ;
+            sdo:name "Center for Research Computing, University of Notre Dame" ;
+            sdo:url "https://crc.nd.edu"^^xsd:anyURI ] ;
+    dcterms:rights "This vocabulary is distributed under Creative Commons Attribution Zero 1.0 Universal License - https://creativecommons.org/share-your-work/public-domain/cc0"@en ;
+    dcterms:status "Draft" ;
+    dcterms:title "LANDRS Ontology for Drone Operations"@en ;
+    vann:preferredNamespacePrefix "drone" ;
+    vann:preferredNamespaceUri "http://w3id.org/drone/ont/" ;
+    rdfs:seeAlso <https://www.landrs.org> ;
+    owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>,
+        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl>,
+        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl>,
+        <https://www.w3.org/ns/prov-o> ;
+    owl:versionIRI drone:0.1.0 ;
+    owl:versionInfo "0.1.0"@en ;
+    skos:note "Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated." ;
+    prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/ATM#>,
+        <https://data.nasa.gov/ontologies/atmonto/equipment#>,
+        <https://docs.ogc.org/per/20-020.html#Ontologies-Component>,
+        <https://semantics.aero/pages/swim-vocabulary#> ;
+    sdo:license "https://spdx.org/licenses/CC0-1.0"@en .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf drone:Identifier ;
+    owl:onProperty drone:hasIdentifierType ;
+    owl:someValuesFrom owl:Thing .
+
