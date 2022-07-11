@@ -17,6 +17,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
 
@@ -48,17 +49,37 @@
                                    sdo:email "cvardema@nd.edu"^^xsd:anyURI ;
                                    sdo:url "https://orcid.org/0000-0003-4091-6059"^^xsd:anyURI ;
                                ];
-                               dcterms:contributor [
+                               dcterms:creator [
                                    a sdo:Person ;
-                                   sdo:name "Christopher Sweet" ;
+                                   sdo:name "Priscila Saboia Moreira"@en ;
                                    sdo:affiliation "University of Notre Dame" ;
-                                   sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ;
-
                                ];
                                dcterms:contributor [
                                    a sdo:Person ;
-                                   sdo:name "Priscila Saboia Moreira" ;
-                                   sdo:affiliation "University of Notre Dame" ;
+                                   sdo:name "Christopher Sweet"@en ;
+                                   sdo:affiliation "University of Notre Dame"@en ;
+                                   sdo:url "https://orcid.org/0000-0001-8214-7177"^^xsd:anyURI ;
+
+                               ];
+                               dcterms:contributor[
+                                    a sdo:Person ;
+                                    sdo:name "Jane Wyngaard"@en ;
+                                    sdo:url "https://orcid.org/0000-0001-7877-2391"^^xsd:anyURI ;
+                               ];
+                               dcterms:contributor[
+                                    a sdo:Organization ;
+                                    sdo:name "Earth Science Information Partners Drone Cluster"@en;
+                                    sdo:url "https://wiki.esipfed.org/Drone_Cluster"^^xsd:anyURI ;
+                               ];
+                               dcterms:contributor[
+                                    a sdo:Organization ;
+                                    sdo:name "Small Unmanned Aircraft Systems Data IG" ;
+                                    sdo:url "https://www.rd-alliance.org/groups/small-unmanned-aircraft-systems’-data-ig"^^xsd:anyURI ;
+                               ];
+                               dcterms:contributor [
+                                    a sdo:Organization ;
+                                    sdo:name "Open Geospatial Consortrium UxS DWG"@en ;
+                                    sdo:url "https://www.ogc.org/projects/groups/uxsdwg"^^xsd:anyURI ;
                                ];
                                dcterms:created "2022-05-14"^^xsd:date ;
                                dcterms:modified "2022-07-05"^^xsd:date ;
@@ -70,19 +91,26 @@ Github: https://github.com/landrs-tookkit/drone"""@en ;
 
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution Zero 1.0 Universal License - https://creativecommons.org/share-your-work/public-domain/cc0"@en ;
                                dcterms:abstract "The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach ";
-                               dcterms:status "Draft";
+                               bibo:status "Work In Progress";
                                vann:preferredNamespacePrefix "drone" ;
                                vann:preferredNamespaceUri "http://w3id.org/drone/ont/" ;
 
                                sdo:license "https://spdx.org/licenses/CC0-1.0"@en ;
-                               prov:wasInfluencedBy <https://docs.ogc.org/per/20-020.html#Ontologies-Component> ;
-                               prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/ATM#>;
-                               prov:wasInfluencedBy <https://semantics.aero/pages/swim-vocabulary#>;
-                               prov:wasInfluencedBy <https://data.nasa.gov/ontologies/atmonto/equipment#> ;
+                               prov:hadPrimarySource <https://docs.ogc.org/per/20-020.html#Ontologies-Component> ;
+                               prov:hadPrimarySource <https://data.nasa.gov/ontologies/atmonto/ATM#>;
+                               prov:hadPrimarySource <https://semantics.aero/pages/swim-vocabulary#>;
+                               prov:hadPrimarySource <https://data.nasa.gov/ontologies/atmonto/equipment#> ;
                                rdfs:seeAlso <https://www.landrs.org> ;
                                skos:note "Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.";
                                owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
                                owl:imports <https://www.w3.org/ns/prov-o> ;
                                owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl>;
                                owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl>;
+                               owl:imports <http://www.w3.org/ns/sosa/>;
+                               owl:imports <http://www.w3.org/ns/ssn/>;
+                               owl:imports <http://www.w3.org/ns/ssn/ext/>;
+#                               owl:imports <http://www.w3.org/ns/sosa/prov>;
+#                               owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time-prov.ttl>;
+#                               owl:imports <https://raw.githubusercontent.com/w3c/dxwg/gh-pages/dcat/rdf/dcat-prov.ttl>;
+                               owl:imports <https://raw.githubusercontent.com/w3c/dxwg/gh-pages/dcat/rdf/dcat3.ttl>;
 .

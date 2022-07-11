@@ -7,4 +7,5 @@ payload, ./modules/equipment/payload.ttl
 droneeqp, ./modules/equipment/drone-eqp.ttl
 vehicle, ./modules/equipment/vehicle.ttl
 mission, ./modules/activities/mission.ttl
+datacollection, ./modules/activities/data-collection.ttl
 route, ./modules/core/route.ttl

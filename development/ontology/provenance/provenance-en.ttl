@@ -6,9 +6,17 @@
 	 dc:title "LANDRS Ontology for Drone Operations";
 	 prov:wasAttributedTo <https://orcid.org/0000-0003-4091-6059>;
 	 dc:creator <https://orcid.org/0000-0003-4091-6059>;
+	 prov:wasAttributedTo :agent0;
 	 prov:wasAttributedTo <https://orcid.org/0000-0001-8214-7177>;
 	 dc:contributor <https://orcid.org/0000-0001-8214-7177>;
-	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo <https://orcid.org/0000-0001-7877-2391>;
+	 dc:contributor <https://orcid.org/0000-0001-7877-2391>;
+	 prov:wasAttributedTo <https://wiki.esipfed.org/Drone_Cluster>;
+	 dc:contributor <https://wiki.esipfed.org/Drone_Cluster>;
+	 prov:wasAttributedTo <https://www.rd-alliance.org/groups/small-unmanned-aircraft-systems’-data-ig>;
+	 dc:contributor <https://www.rd-alliance.org/groups/small-unmanned-aircraft-systems’-data-ig>;
+	 prov:wasAttributedTo <https://www.ogc.org/projects/groups/uxsdwg>;
+	 dc:contributor <https://www.ogc.org/projects/groups/uxsdwg>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:wasGeneratedAt "2022-07-05";
 .
