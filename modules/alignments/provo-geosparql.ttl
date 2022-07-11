@@ -1,0 +1,8 @@
+# https://github.com/opengeospatial/ogc-geosparql/blob/master/1.1/alignments/provo-alignments.ttl
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <https://www.w3.org/TR/prov-o/> .
+
+geo:SpatialObjectCollection rdfs:subClassOf prov:Collection .
+geo:SpatialObject rdfs:subClassOf prov:Entity .
+geo:Feature rdfs:subClassOf prov:Location .
