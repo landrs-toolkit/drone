@@ -1,0 +1,76 @@
+# baseURI: https://w3id.org/drone/activity.owl.shapes
+# imports: http://datashapes.org/dash
+# imports: https://w3id.org/drone/activity.owl
+
+@prefix : <http://tutorial.topbraid.com/activity.owl#> .
+@prefix activity: <https://w3id.org/drone/activity#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+activity:Activity
+  rdf:type sh:NodeShape ;
+  sh:property activity:Activity-activity_hasEndEvent ;
+  sh:property activity:Activity-activity_hasEvent ;
+  sh:property activity:Activity-activity_hasStartEvent ;
+  sh:property activity:Activity-activity_hasSubactivity ;
+  sh:property activity:Activity-activity_subActivityOf ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasEndEvent ;
+      sh:qualifiedMaxCount 1 ;
+      sh:qualifiedValueShape [
+          sh:class activity:Event ;
+        ] ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasEvent ;
+      sh:qualifiedMinCount 0 ;
+      sh:qualifiedValueShape [
+          sh:class activity:Event ;
+        ] ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasStartEvent ;
+      sh:qualifiedMaxCount 1 ;
+      sh:qualifiedValueShape [
+          sh:class activity:Event ;
+        ] ;
+    ] ;
+.
+activity:Activity-activity_hasEndEvent
+  rdf:type sh:PropertyShape ;
+  sh:path activity:hasEndEvent ;
+.
+activity:Activity-activity_hasEvent
+  rdf:type sh:PropertyShape ;
+  sh:path activity:hasEvent ;
+.
+activity:Activity-activity_hasStartEvent
+  rdf:type sh:PropertyShape ;
+  sh:path activity:hasStartEvent ;
+.
+activity:Activity-activity_hasSubactivity
+  rdf:type sh:PropertyShape ;
+  sh:path activity:hasSubactivity ;
+  sh:class activity:Activity ;
+.
+activity:Activity-activity_subActivityOf
+  rdf:type sh:PropertyShape ;
+  sh:path activity:subActivityOf ;
+  sh:class activity:Activity ;
+.
+<https://w3id.org/drone/activity.owl.shapes>
+  rdf:type owl:Ontology ;
+  <http://datashapes.org/owl2shacl#createPropertyShapeURIsWithPrefixes> "true"^^xsd:boolean ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://w3id.org/drone/activity.owl> ;
+.

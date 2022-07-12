@@ -216,6 +216,28 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     
 
 
+    <!-- http://www.w3.org/ns/prov#hadRole -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadRole">
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/PayloadInstrument"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/AcquisitionSource"/>
+        <rdfs:label>had role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+        <rdfs:domain rdf:resource="https://w3id.org/drone/ont/DataAcquisition"/>
+        <rdfs:range rdf:resource="https://w3id.org/drone/ont/PayloadInstrument"/>
+        <rdfs:label>used</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/drone/ont/acquires -->
 
 
@@ -992,15 +1014,6 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     
 
 
-    <!-- http://www.w3.org/ns/prov#Collection -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/prov#Collection">
-        <rdfs:label>Collection</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.w3.org/ns/prov#Entity -->
 
 
@@ -1056,6 +1069,16 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     <owl:Class rdf:about="https://w3id.org/drone/ont/AUV">
         <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/AutonomousRobot"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/UnderwaterRobot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/AcquisitionSource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/AcquisitionSource">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Role"/>
+        <rdfs:label>Acquisition Source</rdfs:label>
     </owl:Class>
     
 
@@ -1689,6 +1712,15 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     <owl:Class rdf:about="https://w3id.org/drone/ont/Payload">
         <rdfs:subClassOf rdf:resource="http://wikidata.org/entity/Q319224"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Cargo"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/PayloadInstrument -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/PayloadInstrument">
+        <rdfs:label>Payload Instrument</rdfs:label>
     </owl:Class>
     
 

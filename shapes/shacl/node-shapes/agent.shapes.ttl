@@ -1,0 +1,73 @@
+# baseURI: https://w3id.org/drone/agent/owl.shapes
+# imports: http://datashapes.org/dash
+# imports: https://w3id.org/drone/agent/owl
+
+@prefix : <https://w3id.org/drone/agent/owl#> .
+@prefix agent: <https://w3id.org/drone/agent#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix schemax: <http://topbraid.org/schemax/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+agent:AgentRole
+  rdf:type sh:NodeShape ;
+  sh:property agent:AgentRole-agent_agentRoleIn ;
+  sh:property agent:AgentRole-agent_hasAgentRoleType ;
+  sh:property agent:AgentRole-agent_hasTemporalExtent ;
+  sh:property agent:AgentRole-agent_performedBy ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path agent:hasTemporalExtent ;
+      sh:qualifiedMaxCount 1 ;
+      sh:qualifiedMinCount 1 ;
+      sh:qualifiedValueShape [
+          sh:class time:TemporalEntity ;
+        ] ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path agent:performedBy ;
+      sh:qualifiedMaxCount 1 ;
+      sh:qualifiedMinCount 1 ;
+      sh:qualifiedValueShape [
+          sh:class agent:Agent ;
+        ] ;
+    ] ;
+.
+agent:AgentRole-agent_agentRoleIn
+  rdf:type sh:PropertyShape ;
+  sh:path agent:agentRoleIn ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+agent:AgentRole-agent_hasAgentRoleType
+  rdf:type sh:PropertyShape ;
+  sh:path agent:hasAgentRoleType ;
+  sh:class agent:AgentRoleType ;
+.
+agent:AgentRole-agent_hasTemporalExtent
+  rdf:type sh:PropertyShape ;
+  sh:path agent:hasTemporalExtent ;
+  sh:class time:TemporalEntity ;
+.
+agent:AgentRole-agent_performedBy
+  rdf:type sh:PropertyShape ;
+  sh:path agent:performedBy ;
+  sh:class agent:Agent ;
+.
+<https://w3id.org/drone/agent/owl.shapes>
+  rdf:type owl:Ontology ;
+  <http://datashapes.org/owl2shacl#createPropertyShapeURIsWithPrefixes> "true"^^xsd:boolean ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://w3id.org/drone/agent/owl> ;
+.

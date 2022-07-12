@@ -1,0 +1,129 @@
+# baseURI: https://w3id.org/drone/activity.shapes
+# imports: http://datashapes.org/dash
+# imports: https://w3id.org/drone/activity
+
+@prefix activity: <https://w3id.org/drone/activity#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+activity:Activity
+  rdf:type sh:NodeShape ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasEndEvent ;
+      sh:class activity:Event ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasEvent ;
+      sh:class activity:Event ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasStartEvent ;
+      sh:class activity:Event ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:hasSubactivity ;
+      sh:class activity:Activity ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path activity:subActivityOf ;
+      sh:class activity:Activity ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+activity:Event
+  rdf:type sh:NodeShape ;
+.
+activity:TemporalEntityShape
+  rdf:type sh:NodeShape ;
+  rdfs:comment "LANDRS Application Shape for OWL Time Temporal Entity"@en ;
+  rdfs:label "Temporal Entitiy Shape"@en ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:after ;
+      sh:class time:TemporalEntity ;
+      sh:maxCount 1 ;
+      sh:name "after" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:before ;
+      sh:class time:TemporalEntity ;
+      sh:maxCount 1 ;
+      sh:name "before" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasBeginning ;
+      sh:class time:Instant ;
+      sh:maxCount 1 ;
+      sh:name "has beginning" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasDuration ;
+      sh:class time:Duration ;
+      sh:maxCount 1 ;
+      sh:name "has duration" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasDurationDescription ;
+      sh:class time:GeneralDurationDescription ;
+      sh:maxCount 1 ;
+      sh:name "has duration description" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasEnd ;
+      sh:class time:Instant ;
+      sh:maxCount 1 ;
+      sh:name "has end" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasTemporalDuration ;
+      sh:class time:TemporalDuration ;
+      sh:maxCount 1 ;
+      sh:name "has temporal duration" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path time:hasXSDDuration ;
+      sh:class time:Duration ;
+      sh:maxCount 1 ;
+      sh:name "has XSDDuration" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:targetClass time:TemporalEntity ;
+.
+<https://w3id.org/drone/activity.shapes>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://w3id.org/drone/activity> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

@@ -1,0 +1,121 @@
+# baseURI: https://w3id.org/drone/vehicle.shapes
+# imports: http://datashapes.org/dash
+# imports: https://w3id.org/drone/equipment.shapes
+# imports: https://w3id.org/drone/vehicle
+
+@prefix : <https://w3id.org/drone/vehicle.shapes#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix equipment: <https://w3id.org/drone/equipment#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vehicle: <https://w3id.org/drone/vehicle#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+vehicle:ASV
+  rdf:type sh:NodeShape ;
+.
+vehicle:AUV
+  rdf:type sh:NodeShape ;
+.
+vehicle:AerialRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:Aircraft
+  rdf:type sh:NodeShape ;
+.
+vehicle:AircraftManufacturer
+  rdf:type sh:NodeShape ;
+.
+vehicle:AircraftModel
+  rdf:type sh:NodeShape ;
+.
+vehicle:AircraftType
+  rdf:type sh:NodeShape ;
+.
+vehicle:AutomatedRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:AutonomousRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:Buoy
+  rdf:type sh:NodeShape ;
+.
+vehicle:MotorizedVehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:ROV
+  rdf:type sh:NodeShape ;
+.
+vehicle:RemotelyPilotedRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:Robot
+  rdf:type sh:NodeShape ;
+.
+vehicle:RoboticVehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:SurfaceRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:SurfaceVehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:UAS
+  rdf:type sh:NodeShape ;
+.
+vehicle:UAV
+  rdf:type sh:NodeShape ;
+.
+vehicle:USV
+  rdf:type sh:NodeShape ;
+.
+vehicle:UnderwaterGlider
+  rdf:type sh:NodeShape ;
+.
+vehicle:UnderwaterRobot
+  rdf:type sh:NodeShape ;
+.
+vehicle:UnderwaterVehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:UnmotorizedVehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:UxV
+  rdf:type sh:NodeShape ;
+.
+vehicle:Vehicle
+  rdf:type sh:NodeShape ;
+.
+vehicle:VehicleManufacturer
+  rdf:type sh:NodeShape ;
+  rdfs:label "Vehicle Manufacturer" ;
+  rdfs:subClassOf equipment:Manufacturer ;
+.
+vehicle:VehicleModel
+  rdf:type sh:NodeShape ;
+.
+vehicle:VehicleType
+  rdf:type sh:NodeShape ;
+.
+vehicle:Vessel
+  rdf:type sh:NodeShape ;
+.
+<https://w3id.org/drone/vehicle.shapes>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://w3id.org/drone/equipment.shapes> ;
+  owl:imports <https://w3id.org/drone/vehicle> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

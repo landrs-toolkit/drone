@@ -4,6 +4,9 @@ This section provides details for each class and property defined by LANDRS Onto
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
+         <a href="#https://w3id.org/drone/ont/AcquisitionSource" title="https://w3id.org/drone/ont/AcquisitionSource">Acquisition Source</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/drone/ont/Activity" title="https://w3id.org/drone/ont/Activity">Activity</a>
       </li>
       <li>
@@ -71,9 +74,6 @@ This section provides details for each class and property defined by LANDRS Onto
       </li>
       <li>
          <a href="#http://purl.org/goodrelations/v1#BusinessEntity" title="http://purl.org/goodrelations/v1#BusinessEntity">Business entity</a>
-      </li>
-      <li>
-         <a href="#http://www.w3.org/ns/prov#Collection" title="http://www.w3.org/ns/prov#Collection">Collection</a>
       </li>
       <li>
          <a href="#https://w3id.org/drone/ont/CommunicationSystem" title="https://w3id.org/drone/ont/CommunicationSystem">
@@ -168,6 +168,9 @@ This section provides details for each class and property defined by LANDRS Onto
          <a href="#https://w3id.org/drone/ont/Payload" title="https://w3id.org/drone/ont/Payload">
             <span>Payload</span>
          </a>
+      </li>
+      <li>
+         <a href="#https://w3id.org/drone/ont/PayloadInstrument" title="https://w3id.org/drone/ont/PayloadInstrument">Payload Instrument</a>
       </li>
       <li>
          <a href="#https://w3id.org/drone/ont/ROV" title="https://w3id.org/drone/ont/ROV">
@@ -267,6 +270,27 @@ This section provides details for each class and property defined by LANDRS Onto
          </a>
       </li>
    </ul>
+   <div class="entity" id="https://w3id.org/drone/ont/AcquisitionSource">
+      <h3>Acquisition Source<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/drone/ont/AcquisitionSource</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/prov#Role"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Role">role</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#hadRole" title="http://www.w3.org/ns/prov#hadRole">had role</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="https://w3id.org/drone/ont/Activity">
       <h3>Activity<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -642,21 +666,6 @@ This section provides details for each class and property defined by LANDRS Onto
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://www.w3.org/ns/prov#Collection">
-      <h3>Collection<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.w3.org/ns/prov#Collection</p>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#https://w3id.org/drone/ont/MissionData" title="https://w3id.org/drone/ont/MissionData">Mission Data</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="https://w3id.org/drone/ont/CommunicationSystem">
       <h3>Communication System<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -745,6 +754,7 @@ This section provides details for each class and property defined by LANDRS Onto
          <dd>
             <a href="#https://w3id.org/drone/ont/acquires" title="https://w3id.org/drone/ont/acquires">acquires</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#https://w3id.org/drone/ont/acquisitionMission" title="https://w3id.org/drone/ont/acquisitionMission">acquisition mission</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/ns/prov#used" title="http://www.w3.org/ns/prov#used">used</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1144,8 +1154,9 @@ This section provides details for each class and property defined by LANDRS Onto
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://www.w3.org/ns/prov#Collection" title="http://www.w3.org/ns/prov#Collection">Collection</a>
-            <sup class="type-c" title="class">c</sup>
+            <a href="http://www.w3.org/ns/prov#Collection"
+               target="_blank"
+               title="http://www.w3.org/ns/prov#Collection">collection</a>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -1208,6 +1219,26 @@ This section provides details for each class and property defined by LANDRS Onto
          <dt>is also defined as</dt>
          <dd>
             <a href="#https://w3id.org/drone/ont/Payload">named individual</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="https://w3id.org/drone/ont/PayloadInstrument">
+      <h3>Payload Instrument<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/drone/ont/PayloadInstrument</p>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#hadRole" title="http://www.w3.org/ns/prov#hadRole">had role</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#used" title="http://www.w3.org/ns/prov#used">used</a>
+            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -1772,6 +1803,9 @@ This section provides details for each class and property defined by LANDRS Onto
          <a href="#https://w3id.org/drone/ont/flightCategory" title="https://w3id.org/drone/ont/flightCategory">flight category</a>
       </li>
       <li>
+         <a href="#http://www.w3.org/ns/prov#hadRole" title="http://www.w3.org/ns/prov#hadRole">had role</a>
+      </li>
+      <li>
          <a href="#https://w3id.org/drone/ont/hasComponentPart" title="https://w3id.org/drone/ont/hasComponentPart">
             <span>has component part</span>
          </a>
@@ -1922,6 +1956,9 @@ This section provides details for each class and property defined by LANDRS Onto
          <a href="#https://w3id.org/drone/ont/surrounds" title="https://w3id.org/drone/ont/surrounds">
             <span>surrounds</span>
          </a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#used" title="http://www.w3.org/ns/prov#used">used</a>
       </li>
    </ul>
    <div class="entity" id="https://w3id.org/drone/ont/acquires">
@@ -2206,6 +2243,28 @@ This section provides details for each class and property defined by LANDRS Onto
             <dt>has range</dt>
             <dd>
                <a href="#https://w3id.org/drone/ont/FlightCategory" title="https://w3id.org/drone/ont/FlightCategory">Flight category</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#hadRole">
+      <h3>had role<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#hadRole</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/drone/ont/PayloadInstrument" title="https://w3id.org/drone/ont/PayloadInstrument">Payload Instrument</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/drone/ont/AcquisitionSource" title="https://w3id.org/drone/ont/AcquisitionSource">Acquisition Source</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -3200,6 +3259,28 @@ This section provides details for each class and property defined by LANDRS Onto
             <dt>is also defined as</dt>
             <dd>
                <a href="#https://w3id.org/drone/ont/surrounds">named individual</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#used">
+      <h3>used<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#used</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#https://w3id.org/drone/ont/DataAcquisition" title="https://w3id.org/drone/ont/DataAcquisition">Data Acquisition</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#https://w3id.org/drone/ont/PayloadInstrument" title="https://w3id.org/drone/ont/PayloadInstrument">Payload Instrument</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>

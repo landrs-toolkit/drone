@@ -1,0 +1,150 @@
+# baseURI: https://w3id.org/drone/equipment.shapes
+# imports: http://datashapes.org/dash
+# imports: http://topbraid.org/schema/schema-single-range
+# imports: http://www.w3.org/ns/prov
+# imports: https://w3id.org/drone/equipment
+
+@prefix : <https://w3id.org/drone/equipment.shapes#> .
+@prefix agents: <https://w3id.org/drone/agents#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix equipment: <https://w3id.org/drone/equipment#> .
+@prefix identifier: <https://w3id.org/drone/identifier#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+equipment:Equipment
+  rdf:type sh:NodeShape ;
+  rdfs:label "Equipment shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path equipment:manufacturedBy ;
+      sh:class equipment:Manufacturer ;
+      sh:name "manufactured by" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path equipment:modelNumber ;
+      sh:datatype xsd:string ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path equipment:operatedBy ;
+      sh:class prov:Agent ;
+      sh:name "operated by" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :equipmentModel ;
+      sh:class equipment:EquipmentModel ;
+      sh:maxCount 1 ;
+      sh:name "equipment model" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :equipmentType ;
+      sh:class equipment:EquipmentType ;
+      sh:maxCount 1 ;
+      sh:name "equipment type" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :hasIdentifier ;
+      sh:class identifier:identifier ;
+      sh:name "has identifier" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :ownedBy ;
+      sh:class prov:Agent ;
+      sh:name "owned by" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :registeredBy ;
+      sh:class prov:Agent ;
+      sh:name "registered by" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :registrationDate ;
+      sh:datatype xsd:dateTime ;
+      sh:maxCount 1 ;
+      sh:name "registration date" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :registrationNumber ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "registration number" ;
+    ] ;
+.
+equipment:EquipmentModel
+  rdf:type sh:NodeShape ;
+  rdfs:label "Equipment shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :equipmentType ;
+      sh:class equipment:EquipmentType ;
+      sh:maxCount 1 ;
+      sh:name "equipment type" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :modelNumber ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:name "model number" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path identifier:Identifier ;
+      sh:name "Identifier" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path identifier:hasIdentifier ;
+      sh:name "has identifier" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+equipment:EquipmentOperator
+  rdf:type sh:NodeShape ;
+  rdfs:label "Equipment shape" ;
+.
+equipment:EquipmentOwner
+  rdf:type sh:NodeShape ;
+  rdfs:label "Equipment shape" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path :ownerOf ;
+      sh:class equipment:Equipment ;
+      sh:name "owner of" ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+.
+equipment:EquipmentPart
+  rdf:type sh:NodeShape ;
+  rdfs:label "Equipment shape" ;
+.
+equipment:EquipmentType
+  rdf:type sh:NodeShape ;
+  rdfs:label "EquipmentType Shape" ;
+.
+equipment:Manufacturer
+  rdf:type sh:NodeShape ;
+  rdfs:label "Manufacturer shape" ;
+.
+<https://w3id.org/drone/equipment.shapes>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <http://topbraid.org/schema/schema-single-range> ;
+  owl:imports <http://www.w3.org/ns/prov> ;
+  owl:imports <https://w3id.org/drone/equipment> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

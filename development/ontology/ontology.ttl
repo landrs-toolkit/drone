@@ -137,6 +137,20 @@ _:genid8 rdf:type <https://schema.org/Organization> ;
 #    Object Properties
 #################################################################
 
+###  http://www.w3.org/ns/prov#hadRole
+<http://www.w3.org/ns/prov#hadRole> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :PayloadInstrument ;
+                                    rdfs:range :AcquisitionSource ;
+                                    rdfs:label "had role" .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :DataAcquisition ;
+                                 rdfs:range :PayloadInstrument ;
+                                 rdfs:label "used" .
+
+
 ###  https://w3id.org/drone/ont/acquires
 :acquires rdf:type owl:ObjectProperty ;
           rdfs:domain :DataAcquisition ;
@@ -603,11 +617,6 @@ owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
 <http://www.w3.org/ns/prov#Agent> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 
-###  http://www.w3.org/ns/prov#Collection
-<http://www.w3.org/ns/prov#Collection> rdf:type owl:Class ;
-                                       rdfs:label "Collection" .
-
-
 ###  http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> owl:equivalentClass :Entity .
 
@@ -638,6 +647,12 @@ owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
 :AUV rdf:type owl:Class ;
      rdfs:subClassOf :AutonomousRobot ,
                      :UnderwaterRobot .
+
+
+###  https://w3id.org/drone/ont/AcquisitionSource
+:AcquisitionSource rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
+                   rdfs:label "Acquisition Source" .
 
 
 ###  https://w3id.org/drone/ont/Activity
@@ -1032,6 +1047,11 @@ owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
 :Payload rdf:type owl:Class ;
          rdfs:subClassOf <http://wikidata.org/entity/Q319224> ,
                          :Cargo .
+
+
+###  https://w3id.org/drone/ont/PayloadInstrument
+:PayloadInstrument rdf:type owl:Class ;
+                   rdfs:label "Payload Instrument" .
 
 
 ###  https://w3id.org/drone/ont/Product

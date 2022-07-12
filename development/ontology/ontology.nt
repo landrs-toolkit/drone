@@ -114,6 +114,18 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/O
 # #################################################################
 # 
 # 
+# http://www.w3.org/ns/prov#hadRole
+<http://www.w3.org/ns/prov#hadRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#hadRole> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/drone/ont/PayloadInstrument> .
+<http://www.w3.org/ns/prov#hadRole> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/drone/ont/AcquisitionSource> .
+<http://www.w3.org/ns/prov#hadRole> <http://www.w3.org/2000/01/rdf-schema#label> "had role" .
+# 
+# http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/drone/ont/DataAcquisition> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/drone/ont/PayloadInstrument> .
+<http://www.w3.org/ns/prov#used> <http://www.w3.org/2000/01/rdf-schema#label> "used" .
+# 
 # https://w3id.org/drone/ont/acquires
 <https://w3id.org/drone/ont/acquires> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/drone/ont/acquires> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/drone/ont/DataAcquisition> .
@@ -525,10 +537,6 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://xmlns.com/foaf/0.1/Agent> .
 # 
-# http://www.w3.org/ns/prov#Collection
-<http://www.w3.org/ns/prov#Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/ns/prov#Collection> <http://www.w3.org/2000/01/rdf-schema#label> "Collection" .
-# 
 # http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/drone/ont/Entity> .
 # 
@@ -553,6 +561,11 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/drone/ont/AUV> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/drone/ont/AUV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/drone/ont/AutonomousRobot> .
 <https://w3id.org/drone/ont/AUV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/drone/ont/UnderwaterRobot> .
+# 
+# https://w3id.org/drone/ont/AcquisitionSource
+<https://w3id.org/drone/ont/AcquisitionSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/drone/ont/AcquisitionSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Role> .
+<https://w3id.org/drone/ont/AcquisitionSource> <http://www.w3.org/2000/01/rdf-schema#label> "Acquisition Source" .
 # 
 # https://w3id.org/drone/ont/Activity
 <https://w3id.org/drone/ont/Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -906,6 +919,10 @@ _:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/drone/ont/Payload> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/drone/ont/Payload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://wikidata.org/entity/Q319224> .
 <https://w3id.org/drone/ont/Payload> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/drone/ont/Cargo> .
+# 
+# https://w3id.org/drone/ont/PayloadInstrument
+<https://w3id.org/drone/ont/PayloadInstrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/drone/ont/PayloadInstrument> <http://www.w3.org/2000/01/rdf-schema#label> "Payload Instrument" .
 # 
 # https://w3id.org/drone/ont/Product
 # 

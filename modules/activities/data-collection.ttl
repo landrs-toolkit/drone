@@ -1,0 +1,48 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+prov:hadRole a owl:ObjectProperty ;
+    rdfs:label "had role" ;
+    rdfs:domain drone:PayloadInstrument ;
+    rdfs:range drone:AcquisitionSource .
+
+prov:used a owl:ObjectProperty ;
+    rdfs:label "used" ;
+    rdfs:domain drone:DataAcquisition ;
+    rdfs:range drone:PayloadInstrument .
+
+drone:acquires a owl:ObjectProperty ;
+    rdfs:label "acquires" ;
+    rdfs:domain drone:DataAcquisition ;
+    rdfs:range drone:MissionData .
+
+drone:acquisitionMission a owl:ObjectProperty ;
+    rdfs:label "acquisition mission" ;
+    rdfs:domain drone:DataAcquisition ;
+    rdfs:range drone:Mission .
+
+drone:AcquisitionSource a owl:Class ;
+    rdfs:label "Acquisition Source" ;
+    rdfs:subClassOf prov:Role .
+
+drone:Activity a owl:Class ;
+    rdfs:label "Activity" .
+
+drone:Mission a owl:Class ;
+    rdfs:label "Mission" .
+
+drone:MissionData a owl:Class ;
+    rdfs:label "Mission Data" ;
+    rdfs:subClassOf prov:Collection .
+
+drone:PayloadInstrument a owl:Class ;
+    rdfs:label "Payload Instrument" .
+
+drone:DataAcquisition a owl:Class ;
+    rdfs:label "Data Acquisition" ;
+    rdfs:subClassOf drone:Activity .
+
+

@@ -1031,12 +1031,6 @@
     "@id" : "http://xmlns.com/foaf/0.1/Agent"
   } ]
 }, {
-  "@id" : "http://www.w3.org/ns/prov#Collection",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "Collection"
-  } ]
-}, {
   "@id" : "http://www.w3.org/ns/prov#Entity",
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/drone/ont/Entity"
@@ -1045,6 +1039,30 @@
   "@id" : "http://www.w3.org/ns/prov#InstantaneousEvent",
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/drone/ont/Event"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#hadRole",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/drone/ont/PayloadInstrument"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "had role"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/drone/ont/AcquisitionSource"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#used",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/drone/ont/DataAcquisition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "used"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/drone/ont/PayloadInstrument"
   } ]
 }, {
   "@id" : "http://www.w3.org/ns/prov#wasQuotedFrom",
@@ -1241,6 +1259,15 @@
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
     "@id" : "_:genid60"
+  } ]
+}, {
+  "@id" : "https://w3id.org/drone/ont/AcquisitionSource",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Acquisition Source"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Role"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Activity",
@@ -1960,6 +1987,12 @@
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
     "@id" : "_:genid70"
+  } ]
+}, {
+  "@id" : "https://w3id.org/drone/ont/PayloadInstrument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Payload Instrument"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Product",
