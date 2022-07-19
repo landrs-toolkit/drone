@@ -3,6 +3,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sdo: <https://schema.org/> .
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -36,6 +38,7 @@
                                dcterms:title "LANDRS Ontology for Drone Operations"@en ;
                                owl:versionIRI <https://w3id.org/drone/ont/0.1.0> ;
                                owl:versionInfo "0.1.0"@en ;
+                               sdo:image "https://raw.githubusercontent.com/landrs-toolkit/landrs-toolkit.github.io/master/images/logo.svg";
                                dcterms:publisher [
                                    a sdo:Organization ;
 		                           sdo:name "Center for Research Computing, University of Notre Dame" ;
@@ -90,7 +93,7 @@ Github: https://github.com/landrs-tookkit/drone"""@en ;
                                dcterms:license <https://spdx.org/licenses/CC0-1.0> ;
 
                                dcterms:rights "This vocabulary is distributed under Creative Commons Attribution Zero 1.0 Universal License - https://creativecommons.org/share-your-work/public-domain/cc0"@en ;
-                               dcterms:abstract "The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach ";
+                               dcterms:abstract "The drone ontology was developed as part of the Slone Foundation funded Linked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach ";
                                bibo:status "Work In Progress";
                                vann:preferredNamespacePrefix "drone" ;
                                vann:preferredNamespaceUri "http://w3id.org/drone/ont/" ;
@@ -101,6 +104,11 @@ Github: https://github.com/landrs-tookkit/drone"""@en ;
                                prov:hadPrimarySource <https://semantics.aero/pages/swim-vocabulary#>;
                                prov:hadPrimarySource <https://data.nasa.gov/ontologies/atmonto/equipment#> ;
                                rdfs:seeAlso <https://www.landrs.org> ;
+                               prov:wasGeneratedBy [
+                                    sdo:name "Linked-data API for Networked Drones"@en ;
+                                     a doap:Project ;
+                                    a prov:Activity ;
+                                    doap:repository <https://github.com/landrs-toolkit/drone> ];
                                skos:note "Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.";
                                owl:imports <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl>;
                                owl:imports <https://www.w3.org/ns/prov-o> ;

@@ -1,9 +1,3 @@
-# baseURI: https://w3id.org/drone/equipment.shapes
-# imports: http://datashapes.org/dash
-# imports: http://topbraid.org/schema/schema-single-range
-# imports: http://www.w3.org/ns/prov
-# imports: https://w3id.org/drone/equipment
-
 @prefix : <https://w3id.org/drone/equipment.shapes#> .
 @prefix agents: <https://w3id.org/drone/agents#> .
 @prefix dash: <http://datashapes.org/dash#> .
@@ -140,11 +134,4 @@ equipment:Manufacturer
   rdf:type sh:NodeShape ;
   rdfs:label "Manufacturer shape" ;
 .
-<https://w3id.org/drone/equipment.shapes>
-  rdf:type owl:Ontology ;
-  owl:imports <http://datashapes.org/dash> ;
-  owl:imports <http://topbraid.org/schema/schema-single-range> ;
-  owl:imports <http://www.w3.org/ns/prov> ;
-  owl:imports <https://w3id.org/drone/equipment> ;
-  owl:versionInfo "Created with TopBraid Composer" ;
-.
+

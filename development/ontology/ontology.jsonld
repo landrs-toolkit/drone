@@ -507,18 +507,17 @@
   } ]
 }, {
   "@id" : "_:genid59",
-  "http://purl.org/dc/terms/source" : [ {
-    "@id" : "https://www.mdpi.com/185614"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"
+  "http://usefulinc.com/ns/doap#repository" : [ {
+    "@id" : "https://github.com/landrs-toolkit/drone"
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
+    "@id" : "http://www.w3.org/ns/prov#Activity"
+  }, {
+    "@id" : "http://usefulinc.com/ns/doap#Project"
   } ],
-  "https://schema.org/identifier" : [ {
-    "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
+  "https://schema.org/name" : [ {
+    "@language" : "en",
+    "@value" : "Linked-data API for Networked Drones"
   } ]
 }, {
   "@id" : "_:genid6",
@@ -584,6 +583,21 @@
   } ]
 }, {
   "@id" : "_:genid63",
+  "http://purl.org/dc/terms/source" : [ {
+    "@id" : "https://www.mdpi.com/185614"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "https://schema.org/identifier" : [ {
+    "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
+  } ]
+}, {
+  "@id" : "_:genid64",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/drone/ont/Component"
   } ],
@@ -591,7 +605,7 @@
     "@id" : "https://w3id.org/drone/ont/FlightControlSystem"
   } ]
 }, {
-  "@id" : "_:genid64",
+  "@id" : "_:genid65",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/drone/ont/UAVComponent"
   }, {
@@ -601,7 +615,7 @@
     "@id" : "https://w3id.org/drone/ont/UxV"
   } ]
 }, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid66",
   "http://purl.org/dc/terms/source" : [ {
     "@id" : "https://www.mdpi.com/185614"
   } ],
@@ -616,7 +630,7 @@
     "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
   } ]
 }, {
-  "@id" : "_:genid66",
+  "@id" : "_:genid67",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/drone/ont/UAVComponent"
   }, {
@@ -626,7 +640,7 @@
     "@id" : "https://w3id.org/drone/ont/UAS"
   } ]
 }, {
-  "@id" : "_:genid67",
+  "@id" : "_:genid68",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/drone/ont/Component"
   } ],
@@ -634,27 +648,12 @@
     "@id" : "https://w3id.org/drone/ont/FlightControlSystem"
   } ]
 }, {
-  "@id" : "_:genid68",
+  "@id" : "_:genid69",
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/drone/ont/Component"
   } ],
   "https://w3id.org/drone/ont/hasWhole" : [ {
     "@id" : "https://w3id.org/drone/ont/UAS"
-  } ]
-}, {
-  "@id" : "_:genid69",
-  "http://purl.org/dc/terms/source" : [ {
-    "@id" : "https://www.mdpi.com/185614"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/ns/prov#Entity"
-  } ],
-  "https://schema.org/identifier" : [ {
-    "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
   } ]
 }, {
   "@id" : "_:genid7",
@@ -668,14 +667,6 @@
   } ]
 }, {
   "@id" : "_:genid70",
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://w3id.org/drone/ont/Component"
-  } ],
-  "https://w3id.org/drone/ont/hasWhole" : [ {
-    "@id" : "https://w3id.org/drone/ont/UAS"
-  } ]
-}, {
-  "@id" : "_:genid71",
   "http://purl.org/dc/terms/source" : [ {
     "@id" : "https://www.mdpi.com/185614"
   } ],
@@ -688,6 +679,14 @@
   } ],
   "https://schema.org/identifier" : [ {
     "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
+  } ]
+}, {
+  "@id" : "_:genid71",
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/drone/ont/Component"
+  } ],
+  "https://w3id.org/drone/ont/hasWhole" : [ {
+    "@id" : "https://w3id.org/drone/ont/UAS"
   } ]
 }, {
   "@id" : "_:genid72",
@@ -866,6 +865,21 @@
   } ]
 }, {
   "@id" : "_:genid83",
+  "http://purl.org/dc/terms/source" : [ {
+    "@id" : "https://www.mdpi.com/185614"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Entity"
+  } ],
+  "https://schema.org/identifier" : [ {
+    "@value" : "https://dx.doi.org/10.3390%2Fs17030569"
+  } ]
+}, {
+  "@id" : "_:genid84",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/drone/ont/Identifier"
@@ -940,6 +954,12 @@
   "@id" : "http://semanticscience.org/resource/equivalentTo",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://usefulinc.com/ns/doap#Project",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://usefulinc.com/ns/doap#repository",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://wikidata.org/entity/Q107009743",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
@@ -1001,6 +1021,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "http://wikidata.org/entity/Q618465",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+}, {
+  "@id" : "http://wikidata.org/entity/Q7663702",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "http://wikidata.org/entity/Q811909",
@@ -1089,6 +1112,9 @@
   "@id" : "https://schema.org/identifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "https://schema.org/image",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://schema.org/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -1116,7 +1142,7 @@
   "@id" : "https://w3id.org/drone/ont/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/abstract" : [ {
-    "@value" : "The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach "
+    "@value" : "The drone ontology was developed as part of the Slone Foundation funded Linked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach "
   } ],
   "http://purl.org/dc/terms/contributor" : [ {
     "@id" : "_:genid1"
@@ -1208,6 +1234,12 @@
   }, {
     "@id" : "https://semantics.aero/pages/swim-vocabulary#"
   } ],
+  "http://www.w3.org/ns/prov#wasGeneratedBy" : [ {
+    "@id" : "_:genid59"
+  } ],
+  "https://schema.org/image" : [ {
+    "@value" : "https://raw.githubusercontent.com/landrs-toolkit/landrs-toolkit.github.io/master/images/logo.svg"
+  } ],
   "https://schema.org/license" : [ {
     "@language" : "en",
     "@value" : "https://spdx.org/licenses/CC0-1.0"
@@ -1232,7 +1264,7 @@
     "@value" : "ASV"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid59"
+    "@id" : "_:genid60"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/AUV",
@@ -1258,7 +1290,7 @@
     "@id" : "http://wikidata.org/entity/Q257406"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid60"
+    "@id" : "_:genid61"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/AcquisitionSource",
@@ -1441,7 +1473,7 @@
     "@id" : "https://w3id.org/drone/ont/Robot"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid61"
+    "@id" : "_:genid62"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/AutonomousRobot",
@@ -1460,7 +1492,7 @@
     "@id" : "https://w3id.org/drone/ont/Robot"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid62"
+    "@id" : "_:genid63"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Autopilot",
@@ -1490,7 +1522,7 @@
     "@id" : "https://w3id.org/drone/ont/FlightControlSystem"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid63"
+    "@id" : "_:genid64"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Body",
@@ -1513,7 +1545,7 @@
     "@id" : "https://w3id.org/drone/ont/UxV"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid64"
+    "@id" : "_:genid65"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Buoy",
@@ -1533,7 +1565,7 @@
     "@id" : "http://wikidata.org/entity/Q30026"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid65"
+    "@id" : "_:genid66"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Cargo",
@@ -1563,7 +1595,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/ssn/System"
   }, {
-    "@id" : "https://w3id.org/drone/ont/Product"
+    "@id" : "https://w3id.org/drone/ont/Equipment"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "http://wikidata.org/entity/Q31479975"
@@ -1575,7 +1607,7 @@
     "@id" : "https://w3id.org/drone/ont/UAS"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid66"
+    "@id" : "_:genid67"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/CompanionComputer",
@@ -1593,9 +1625,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/ssn/System"
   }, {
-    "@id" : "https://w3id.org/drone/ont/Payload"
+    "@id" : "https://w3id.org/drone/ont/Equipment"
   }, {
-    "@id" : "https://w3id.org/drone/ont/Product"
+    "@id" : "https://w3id.org/drone/ont/Payload"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "http://wikidata.org/entity/Q944780"
@@ -1616,6 +1648,28 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "http://wikidata.org/entity/Q811909"
+  } ]
+}, {
+  "@id" : "https://w3id.org/drone/ont/Configuration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Configuration"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "set of modifiable parameters of an engineered system, or their values, that allow it to support a particular function"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
+    "@id" : "http://wikidata.org/entity/Q7663702"
+  } ]
+}, {
+  "@id" : "https://w3id.org/drone/ont/ConfigurationDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://xmlns.com/foaf/0.1/Document"
+  } ],
+  "http://xmlns.com/foaf/0.1/primaryTopic" : [ {
+    "@id" : "https://w3id.org/drone/ont/Configuration"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/DataAcquisition",
@@ -1844,7 +1898,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/System"
   }, {
-    "@id" : "https://w3id.org/drone/ont/Product"
+    "@id" : "https://w3id.org/drone/ont/Equipment"
   } ],
   "https://schema.org/sameAs" : [ {
     "@id" : "http://w3id.org/s3n/MicroController"
@@ -1853,7 +1907,7 @@
     "@id" : "https://w3id.org/drone/ont/FlightControlSystem"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid67"
+    "@id" : "_:genid68"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/GroundControlStation",
@@ -1870,7 +1924,7 @@
     "@id" : "https://en.wikipedia.org/wiki/Ground_control_station"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/drone/ont/Product"
+    "@id" : "https://w3id.org/drone/ont/Equipment"
   } ],
   "http://www.w3.org/2004/02/skos/core#exactMatch" : [ {
     "@id" : "http://wikidata.org/entity/Q4118990"
@@ -1879,11 +1933,14 @@
     "@id" : "https://w3id.org/drone/ont/UAS"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid68"
+    "@id" : "_:genid69"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/IDType",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "ID Type"
+  } ],
   "https://w3id.org/OPLaX/isNativeTo" : [ {
     "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@value" : "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"
@@ -1891,6 +1948,9 @@
 }, {
   "@id" : "https://w3id.org/drone/ont/Identifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Identifier"
+  } ],
   "https://w3id.org/OPLaX/isNativeTo" : [ {
     "@type" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "@value" : "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"
@@ -1958,7 +2018,7 @@
     "@id" : "https://w3id.org/drone/ont/Vehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid69"
+    "@id" : "_:genid70"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Payload",
@@ -1986,7 +2046,7 @@
     "@id" : "https://w3id.org/drone/ont/UAS"
   } ],
   "https://w3id.org/drone/ont/isPartOf" : [ {
-    "@id" : "_:genid70"
+    "@id" : "_:genid71"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/PayloadInstrument",
@@ -2017,7 +2077,7 @@
     "@id" : "http://wikidata.org/entity/Q618465"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid71"
+    "@id" : "_:genid72"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/RemotelyPilotedRobot",
@@ -2030,7 +2090,7 @@
     "@id" : "https://w3id.org/drone/ont/Robot"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid72"
+    "@id" : "_:genid73"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Robot",
@@ -2050,7 +2110,7 @@
     "@id" : "http://wikidata.org/entity/Q11012"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid73"
+    "@id" : "_:genid74"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/RoboticVehice",
@@ -2074,7 +2134,7 @@
     "@id" : "https://w3id.org/drone/ont/Vehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid74"
+    "@id" : "_:genid75"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Route",
@@ -2146,7 +2206,7 @@
     "@id" : "https://w3id.org/drone/ont/SurfaceVehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid75"
+    "@id" : "_:genid76"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/SurfaceVehicle",
@@ -2159,7 +2219,7 @@
     "@id" : "https://w3id.org/drone/ont/Vehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid76"
+    "@id" : "_:genid77"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/Type",
@@ -2264,7 +2324,7 @@
     "@id" : "http://wikidata.org/entity/Q4419860"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid77"
+    "@id" : "_:genid78"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/UnderwaterGlider",
@@ -2286,7 +2346,7 @@
     "@id" : "http://wikidata.org/entity/Q2634473"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid78"
+    "@id" : "_:genid79"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/UnderwaterRobot",
@@ -2305,7 +2365,7 @@
     "@id" : "https://w3id.org/drone/ont/UnderwaterVehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid79"
+    "@id" : "_:genid80"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/UnderwaterVehicle",
@@ -2318,7 +2378,7 @@
     "@id" : "https://w3id.org/drone/ont/Vehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid80"
+    "@id" : "_:genid81"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/UnmotorizedVehicle",
@@ -2331,7 +2391,7 @@
     "@id" : "https://w3id.org/drone/ont/Vehicle"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid81"
+    "@id" : "_:genid82"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/UxV",
@@ -2402,7 +2462,7 @@
     "@id" : "http://wikidata.org/entity/Q16391167"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "_:genid82"
+    "@id" : "_:genid83"
   } ]
 }, {
   "@id" : "https://w3id.org/drone/ont/acquires",

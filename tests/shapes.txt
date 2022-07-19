@@ -1,1 +1,2 @@
 metadata,./modules/core/metadata-shacl.ttl
+vehicle,./shapes/shacl/node-shapes/VehicleConstraint.ttl

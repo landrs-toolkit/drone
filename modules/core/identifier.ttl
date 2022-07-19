@@ -64,11 +64,13 @@ owl:Thing rdfs:subClassOf [ rdf:type owl:Restriction ;
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#IDType
 drone:IDType rdf:type owl:Class ;
+        rdfs:label "ID Type";
         oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
 
 ###  https://archive.org/services/purl/domain/modular_ontology_design_library/identifier#Identifier
 drone:Identifier rdf:type owl:Class ;
+            rdfs:label "Identifier";
             oplax:isNativeTo "https://archive.org/services/purl/domain/modular_ontology_design_library/identifier"^^rdfs:Literal .
 
 

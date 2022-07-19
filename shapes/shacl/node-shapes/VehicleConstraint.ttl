@@ -1,0 +1,14 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+@prefix drone: <https://w3id.org/drone/ont/> .
+@prefix dronesh: <https://w3id.org/drone/shapes/shacl/> .
+
+dronesh:VehicleConstraint
+    a sh:NodeShape ;
+    sh:targetClass drone:Vehicle ;
+    

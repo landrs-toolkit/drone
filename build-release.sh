@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # WARNING: This is a quick hack that depends on the verison of python PDM installed
-pdmdir=`pdm info |grep Packages | cut -d: -f2`
+pdmdir=`pdm info --packages`
 mergecmd="pdm run python ${pdmdir}/lib/rdfx/rdfx_cli.py"
 pylodecmd="pdm run pylode"
 files=$(cat tests/modules.txt | awk -F, '{print $2}')

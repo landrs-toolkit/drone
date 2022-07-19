@@ -9,6 +9,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:bibo="http://purl.org/ontology/bibo/"
      xmlns:dcam="http://purl.org/dc/dcam/"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:prov="http://www.w3.org/ns/prov#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -29,7 +30,7 @@
         <owl:imports rdf:resource="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time/rdf/time.ttl"/>
         <owl:imports rdf:resource="https://www.w3.org/ns/prov-o"/>
-        <terms:abstract>The drone ontology was developed as part of the Slone Foundation fundedLinked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach </terms:abstract>
+        <terms:abstract>The drone ontology was developed as part of the Slone Foundation funded Linked-data API for Networked DRoneS using a Ontology Design Pattern (ODP) Based Approach </terms:abstract>
         <terms:contributor rdf:nodeID="genid1"/>
         <terms:contributor rdf:nodeID="genid2"/>
         <terms:contributor rdf:nodeID="genid3"/>
@@ -53,6 +54,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
         <rdfs:seeAlso rdf:resource="https://www.landrs.org"/>
         <owl:versionInfo xml:lang="en">0.1.0</owl:versionInfo>
         <skos:note>Prior development of the Drone ontology was in the Github https://github.com/landrs-toolkit/LANDRS-o. Drone refactored and merged LANDRS-o and is now depricated.</skos:note>
+        <schema:image>https://raw.githubusercontent.com/landrs-toolkit/landrs-toolkit.github.io/master/images/logo.svg</schema:image>
         <schema:license xml:lang="en">https://spdx.org/licenses/CC0-1.0</schema:license>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
@@ -127,6 +129,13 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     
 
 
+    <!-- http://usefulinc.com/ns/doap#repository -->
+
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#repository"/>
+    
+
+
     <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
 
 
@@ -145,6 +154,13 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:AnnotationProperty rdf:about="https://schema.org/identifier"/>
+    
+
+
+    <!-- https://schema.org/image -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/image"/>
     
 
 
@@ -942,6 +958,13 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     
 
 
+    <!-- http://usefulinc.com/ns/doap#Project -->
+
+
+    <owl:Class rdf:about="http://usefulinc.com/ns/doap#Project"/>
+    
+
+
     <!-- http://wikidata.org/entity/Q2916098 -->
 
 
@@ -1319,7 +1342,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/CommunicationSystem">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
     </owl:Class>
     
 
@@ -1329,8 +1352,8 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/CompanionComputer">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/System"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Payload"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
     </owl:Class>
     
 
@@ -1340,6 +1363,22 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/Component">
         <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Configuration -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/Configuration"/>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ConfigurationDocument -->
+
+
+    <owl:Class rdf:about="https://w3id.org/drone/ont/ConfigurationDocument">
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
     </owl:Class>
     
 
@@ -1626,7 +1665,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/FlightControllerBoard">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/System"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
     </owl:Class>
     
 
@@ -1635,7 +1674,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/GroundControlStation">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Product"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/drone/ont/Equipment"/>
     </owl:Class>
     
 
@@ -1644,6 +1683,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/IDType">
+        <rdfs:label>ID Type</rdfs:label>
         <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
     </owl:Class>
     
@@ -1653,6 +1693,7 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:Class rdf:about="https://w3id.org/drone/ont/Identifier">
+        <rdfs:label>Identifier</rdfs:label>
         <OPLaX:isNativeTo rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">https://archive.org/services/purl/domain/modular_ontology_design_library/identifier</OPLaX:isNativeTo>
     </owl:Class>
     
@@ -2244,6 +2285,13 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     
 
 
+    <!-- http://wikidata.org/entity/Q7663702 -->
+
+
+    <owl:NamedIndividual rdf:about="http://wikidata.org/entity/Q7663702"/>
+    
+
+
     <!-- http://wikidata.org/entity/Q811909 -->
 
 
@@ -2294,7 +2342,14 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
         <prov:hadPrimarySource rdf:resource="https://data.nasa.gov/ontologies/atmonto/equipment#"/>
         <prov:hadPrimarySource rdf:resource="https://docs.ogc.org/per/20-020.html#Ontologies-Component"/>
         <prov:hadPrimarySource rdf:resource="https://semantics.aero/pages/swim-vocabulary#"/>
+        <prov:wasGeneratedBy rdf:nodeID="genid59"/>
     </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid59">
+        <rdf:type rdf:resource="http://usefulinc.com/ns/doap#Project"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <doap:repository rdf:resource="https://github.com/landrs-toolkit/drone"/>
+        <schema:name xml:lang="en">Linked-data API for Networked Drones</schema:name>
+    </rdf:Description>
     
 
 
@@ -2302,9 +2357,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/ASV">
-        <prov:wasDerivedFrom rdf:nodeID="genid59"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid60"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid59">
+    <rdf:Description rdf:nodeID="genid60">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2318,9 +2373,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AUV">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q257406"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid60"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid61"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid60">
+    <rdf:Description rdf:nodeID="genid61">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2360,9 +2415,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AutomatedRobot">
-        <prov:wasDerivedFrom rdf:nodeID="genid61"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid62"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid61">
+    <rdf:Description rdf:nodeID="genid62">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2375,9 +2430,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/AutonomousRobot">
-        <prov:wasDerivedFrom rdf:nodeID="genid62"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid63"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid62">
+    <rdf:Description rdf:nodeID="genid63">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2390,9 +2445,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Autopilot">
-        <isPartOf rdf:nodeID="genid63"/>
+        <isPartOf rdf:nodeID="genid64"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid63">
+    <rdf:Description rdf:nodeID="genid64">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
     </rdf:Description>
@@ -2404,9 +2459,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Body">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
-        <isPartOf rdf:nodeID="genid64"/>
+        <isPartOf rdf:nodeID="genid65"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid64">
+    <rdf:Description rdf:nodeID="genid65">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/UxV"/>
@@ -2419,9 +2474,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Buoy">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q30026"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid65"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid66"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid65">
+    <rdf:Description rdf:nodeID="genid66">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2444,9 +2499,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/CommunicationSystem">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q31479975"/>
-        <isPartOf rdf:nodeID="genid66"/>
+        <isPartOf rdf:nodeID="genid67"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid66">
+    <rdf:Description rdf:nodeID="genid67">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <rdf:type rdf:resource="https://w3id.org/drone/ont/UAVComponent"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
@@ -2468,6 +2523,24 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Component">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q811909"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/Configuration -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Configuration">
+        <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q7663702"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/drone/ont/ConfigurationDocument -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/ConfigurationDocument">
+        <foaf:primaryTopic rdf:resource="https://w3id.org/drone/ont/Configuration"/>
     </owl:NamedIndividual>
     
 
@@ -2503,9 +2576,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/FlightControllerBoard">
-        <isPartOf rdf:nodeID="genid67"/>
+        <isPartOf rdf:nodeID="genid68"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid67">
+    <rdf:Description rdf:nodeID="genid68">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/FlightControlSystem"/>
     </rdf:Description>
@@ -2517,9 +2590,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/GroundControlStation">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q4118990"/>
-        <isPartOf rdf:nodeID="genid68"/>
+        <isPartOf rdf:nodeID="genid69"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid68">
+    <rdf:Description rdf:nodeID="genid69">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
     </rdf:Description>
@@ -2548,9 +2621,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/MotorizedVehicle">
-        <prov:wasDerivedFrom rdf:nodeID="genid69"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid70"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid69">
+    <rdf:Description rdf:nodeID="genid70">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2564,9 +2637,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Payload">
         <skos:closeMatch rdf:resource="https://www.wikidata.org/wiki/Q21211206"/>
-        <isPartOf rdf:nodeID="genid70"/>
+        <isPartOf rdf:nodeID="genid71"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid70">
+    <rdf:Description rdf:nodeID="genid71">
         <rdf:type rdf:resource="https://w3id.org/drone/ont/Component"/>
         <hasWhole rdf:resource="https://w3id.org/drone/ont/UAS"/>
     </rdf:Description>
@@ -2578,9 +2651,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/ROV">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q618465"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid71"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid72"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid71">
+    <rdf:Description rdf:nodeID="genid72">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2593,9 +2666,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/RemotelyPilotedRobot">
-        <prov:wasDerivedFrom rdf:nodeID="genid72"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid73"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid72">
+    <rdf:Description rdf:nodeID="genid73">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2609,9 +2682,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Robot">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q11012"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid73"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid74"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid73">
+    <rdf:Description rdf:nodeID="genid74">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2624,9 +2697,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/RoboticVehicle">
-        <prov:wasDerivedFrom rdf:nodeID="genid74"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid75"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid74">
+    <rdf:Description rdf:nodeID="genid75">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2639,9 +2712,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/SurfaceRobot">
-        <prov:wasDerivedFrom rdf:nodeID="genid75"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid76"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid75">
+    <rdf:Description rdf:nodeID="genid76">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2654,9 +2727,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/SurfaceVehicle">
-        <prov:wasDerivedFrom rdf:nodeID="genid76"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid77"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid76">
+    <rdf:Description rdf:nodeID="genid77">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2688,9 +2761,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/USV">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q4419860"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid77"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid78"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid77">
+    <rdf:Description rdf:nodeID="genid78">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2704,9 +2777,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterGlider">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q2634473"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid78"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid79"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid78">
+    <rdf:Description rdf:nodeID="genid79">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2719,9 +2792,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterRobot">
-        <prov:wasDerivedFrom rdf:nodeID="genid79"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid80"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid79">
+    <rdf:Description rdf:nodeID="genid80">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2734,9 +2807,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnderwaterVehicle">
-        <prov:wasDerivedFrom rdf:nodeID="genid80"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid81"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid80">
+    <rdf:Description rdf:nodeID="genid81">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2749,9 +2822,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/UnmotorizedVehicle">
-        <prov:wasDerivedFrom rdf:nodeID="genid81"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid82"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid81">
+    <rdf:Description rdf:nodeID="genid82">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -2783,9 +2856,9 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
 
     <owl:NamedIndividual rdf:about="https://w3id.org/drone/ont/Vessel">
         <skos:exactMatch rdf:resource="http://wikidata.org/entity/Q16391167"/>
-        <prov:wasDerivedFrom rdf:nodeID="genid82"/>
+        <prov:wasDerivedFrom rdf:nodeID="genid83"/>
     </owl:NamedIndividual>
-    <rdf:Description rdf:nodeID="genid82">
+    <rdf:Description rdf:nodeID="genid83">
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <terms:source rdf:resource="https://www.mdpi.com/185614"/>
         <terms:title xml:lang="en">SWARMs Ontology: A Common Information Model for the Cooperation of Underwater Robots</terms:title>
@@ -3110,6 +3183,10 @@ Github: https://github.com/landrs-tookkit/drone</terms:description>
     <rdf:Description rdf:about="https://w3id.org/drone/ont/Component">
         <rdfs:comment xml:lang="en">Subclass of equipment to enumerate composition of a UxV</rdfs:comment>
         <rdfs:label xml:lang="en">Component</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://w3id.org/drone/ont/Configuration">
+        <rdfs:label>Configuration</rdfs:label>
+        <skos:definition xml:lang="en">set of modifiable parameters of an engineered system, or their values, that allow it to support a particular function</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/drone/ont/Entity">
         <terms:description xml:lang="en">Every thing is an entity.</terms:description>
